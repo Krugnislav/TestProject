@@ -1,0 +1,98 @@
+﻿@model IEnumerable<TestProject.Models.User>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfBirth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AddedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ActivatedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ActivatedLink)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastVisitDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AvatarPath)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Roles)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink(item.Email, "Edit", new { id = item.ID })
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOfBirth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AddedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActivatedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActivatedLink)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastVisitDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AvatarPath)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @foreach (var role in item.Roles)
+            { 
+                    @Html.DisplayFor(modelItem => role.Name) <br>
+            }
+        </td>
+    </tr>
+}
+
+</table>

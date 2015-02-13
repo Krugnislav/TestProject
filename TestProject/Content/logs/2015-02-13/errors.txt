@@ -1,0 +1,25 @@
+2015-02-13 12:57:07.3715|ERROR|TestProject.Global.Auth.CustomAuthentication|Failed authentication: Ссылка на объект не указывает на экземпляр объекта.
+2015-02-13 12:57:07.3715|ERROR|TestProject.Global.Auth.CustomAuthentication|Failed authentication: Ссылка на объект не указывает на экземпляр объекта.
+2015-02-13 13:05:07.7356|ERROR|TestProject.Global.Auth.CustomAuthentication|Failed authentication: Ссылка на объект не указывает на экземпляр объекта.
+2015-02-13 13:06:14.1263|ERROR|TestProject.Global.Auth.CustomAuthentication|Failed authentication: Ссылка на объект не указывает на экземпляр объекта.
+2015-02-13 13:10:36.9147|ERROR|TestProject.Global.Auth.CustomAuthentication|Failed authentication: Ссылка на объект не указывает на экземпляр объекта.
+2015-02-13 13:21:23.6574|ERROR|TestProject.Global.Auth.CustomAuthentication|Failed authentication: Ссылка на объект не указывает на экземпляр объекта.
+2015-02-13 13:24:47.1167|ERROR|TestProject.Global.Auth.CustomAuthentication|Failed authentication: Ссылка на объект не указывает на экземпляр объекта.
+2015-02-13 13:30:30.3800|ERROR|TestProject.Global.Auth.CustomAuthentication|Failed authentication: Ссылка на объект не указывает на экземпляр объекта.
+2015-02-13 13:36:48.4785|ERROR|TestProject.Global.Auth.CustomAuthentication|Failed authentication: Ссылка на объект не указывает на экземпляр объекта.
+2015-02-13 14:13:20.7993|ERROR|TestProject.Global.Auth.CustomAuthentication|Failed authentication: Ссылка на объект не указывает на экземпляр объекта.
+2015-02-13 14:15:40.2443|ERROR|TestProject.Global.Auth.CustomAuthentication|Failed authentication: Ссылка на объект не указывает на экземпляр объекта.
+2015-02-13 14:16:57.8164|ERROR|TestProject.Global.Auth.CustomAuthentication|Failed authentication: Ссылка на объект не указывает на экземпляр объекта.
+2015-02-13 14:17:28.4523|ERROR|TestProject.Global.Auth.CustomAuthentication|Failed authentication: Ссылка на объект не указывает на экземпляр объекта.
+2015-02-13 14:17:39.6756|ERROR|TestProject.Global.Auth.CustomAuthentication|Failed authentication: Ссылка на объект не указывает на экземпляр объекта.
+2015-02-13 14:20:20.4724|ERROR|TestProject.Global.Auth.CustomAuthentication|Failed authentication: Ссылка на объект не указывает на экземпляр объекта.
+2015-02-13 16:56:30.0855|ERROR|TestProject.Tools.Mail.MailSender|Mail send exception
+2015-02-13 17:01:26.4392|ERROR|TestProject.Tools.Mail.MailSender|Mail send exception
+2015-02-13 17:02:52.3569|ERROR|TestProject.Tools.Mail.MailSender|Mail send exception
+2015-02-13 17:04:53.5008|ERROR|TestProject.Tools.Mail.MailSender|Mail send exception
+2015-02-13 17:08:51.2893|ERROR|TestProject.Tools.Mail.MailSender|Mail send exception
+2015-02-13 17:09:06.9049|ERROR|TestProject.Tools.Mail.MailSender|Mail send exception
+2015-02-13 17:15:24.7625|ERROR|TestProject.Tools.Mail.MailSender|Mail send exception
+2015-02-13 17:17:22.6742|ERROR|TestProject.Tools.Mail.MailSender|Mail send exception
+2015-02-13 17:17:47.5475|ERROR|TestProject.Tools.Mail.MailSender|Mail send exception
+2015-02-13 17:26:26.8214|ERROR|TestProject.Tools.Mail.MailSender|Mail send exception

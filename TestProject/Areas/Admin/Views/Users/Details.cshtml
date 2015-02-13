@@ -1,0 +1,106 @@
+﻿@model TestProject.Models.User
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>User</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfBirth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfBirth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AddedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AddedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ActivatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActivatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ActivatedLink)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActivatedLink)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastVisitDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastVisitDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AvatarPath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AvatarPath)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
