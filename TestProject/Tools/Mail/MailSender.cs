@@ -61,7 +61,7 @@ namespace TestProject.Tools.Mail
                             new NetworkCredential(Config.MailSetting.SmtpUserName,
                                                   Config.MailSetting.SmtpPassword),
                         DeliveryMethod = SmtpDeliveryMethod.SpecifiedPickupDirectory,
-                        PickupDirectoryLocation = "C:/test"
+                        PickupDirectoryLocation = "C:/test/email"
                     };
                     client.Send(message);
                 }

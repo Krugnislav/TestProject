@@ -19,12 +19,27 @@ namespace TestProject
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
-            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+            bundles.Add(new ScriptBundle("~/bundles/bootstrapjs").Include(
+                 "~/Scripts/bootstrap.js",
+                 "~/Scripts/angular-ui/ui-bootstrap-tpls.js"
+                 ));
+
+            bundles.Add(new ScriptBundle("~/bundles/angularjs").Include(
+                                 "~/Scripts/angular.js",
+                                 "~/Scripts/angular-route.js",
+                                 "~/Scripts/angular-sanitize.js",
+                                 "~/Scripts/ng-grid.js",
+                                 "~/Scripts/ng-grid-flexible-height.js"
+                                 ));
+
+            // our controller, services, directives and main app js files
+            bundles.Add(new ScriptBundle("~/bundles/app").Include(
+                                 "~/Scripts/app.js"
+                          ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/ng-grid.css",
                       "~/Content/site.css"));
         }
     }
