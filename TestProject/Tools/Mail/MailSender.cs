@@ -26,7 +26,7 @@ namespace TestProject.Tools.Mail
                 return _config;
             }
         }
-
+        
         private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
 
         public static void SendMail(string email, string subject, string body, MailAddress mailAddress = null)
@@ -34,7 +34,7 @@ namespace TestProject.Tools.Mail
 
             try
             {
-                IConfig conf = Config;
+                
                 if (Config.EnableMail)
                 {
                     if (mailAddress == null)
@@ -60,7 +60,8 @@ namespace TestProject.Tools.Mail
                         Credentials =
                             new NetworkCredential(Config.MailSetting.SmtpUserName,
                                                   Config.MailSetting.SmtpPassword),
-                        DeliveryMethod = SmtpDeliveryMethod.Network
+                        DeliveryMethod = SmtpDeliveryMethod.SpecifiedPickupDirectory,
+                        PickupDirectoryLocation = "C:/test"
                     };
                     client.Send(message);
                 }
@@ -72,6 +73,7 @@ namespace TestProject.Tools.Mail
             catch (Exception ex)
             {
                 logger.Error("Mail send exception", ex.Message);
+                
             }
         }
     }
