@@ -28,18 +28,17 @@ namespace TestProject
                                  "~/Scripts/angular.js",
                                  "~/Scripts/angular-route.js",
                                  "~/Scripts/angular-sanitize.js",
-                                 "~/Scripts/ng-grid.js",
-                                 "~/Scripts/ng-grid-flexible-height.js"
+                                 "~/Scripts/ng-table.js"
                                  ));
 
             // our controller, services, directives and main app js files
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
-                                 "~/Scripts/app.js"
+                                 "~/Scripts/Script.js"
                           ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
+                      "~/Content/ng-table.css",
                       "~/Content/bootstrap.css",
-                      "~/Content/ng-grid.css",
                       "~/Content/site.css"));
         }
     }

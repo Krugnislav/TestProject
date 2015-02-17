@@ -1,7 +1,6 @@
 ﻿var app = angular.module('MyApp', ['ngGrid']);
 
 app.controller('MainController', ['$scope', '$http', function ($scope, $http, $apply) {
-    $scope.items = [];
 
     // filter
     $scope.filterOptions = {
@@ -29,24 +28,24 @@ app.controller('MainController', ['$scope', '$http', function ($scope, $http, $a
         columnDefs: [
             { field: "ID", displayName: "ID", width: "60" },
             { field: "Name", displayName: "Name", pinnable: true },
-            { field: "LastName", displayName: "LastName", width: "60" },
-            { field: "Email", displayName: "Email", width: "40" },
-            { field: "Roles", displayName: "Roles", width: "40" }
+            { field: "LastName", displayName: "LastName", width: "100" },
+            { field: "Email", displayName: "Email", width: "100" },
+            { field: "Roles", displayName: "Roles", width: "100" }
         ],
         enablePaging: true,
         enablePinning: true,
+        enableCellEdit: true,
         pagingOptions: $scope.pagingOptions,
         filterOptions: $scope.filterOptions,
         keepLastSelected: true,
         multiSelect: false,
         showColumnMenu: true,
         showFilter: true,
-        showGroupPanel: true,
         showFooter: true,
         sortInfo: $scope.sortOptions,
         totalServerItems: "totalServerItems",
         useExternalSorting: true,
-        i18n: "en"
+        i18n: "ru"
     };
 
     $scope.refresh = function () {

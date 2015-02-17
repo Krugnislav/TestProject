@@ -10,94 +10,59 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Password)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LastName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DateOfBirth)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AddedDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ActivatedDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ActivatedLink)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LastVisitDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AvatarPath)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Status)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Roles)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.ActionLink(item.Email, "Edit", new { id = item.ID })
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Password)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LastName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DateOfBirth)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AddedDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ActivatedDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ActivatedLink)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LastVisitDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AvatarPath)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Status)
-        </td>
-        <td>
-            @foreach (var role in item.Roles)
-            { 
-                    @Html.DisplayFor(modelItem => role.Name) <br>
-            }
-        </td>
-    </tr>
-}
+<div ng-app="main">
+    <div ng-controller="DemoCtrl">
 
-</table>
+        <button ng-click="tableParams.sorting({})" class="btn btn-default pull-right">Clear sorting</button>
+        <button ng-click="tableParams.filter({})" class="btn btn-default pull-right">Clear filter</button>
+        <p><strong>Sorting:</strong> {{tableParams.sorting()|json}}
+        <p>
+            <strong>Filter:</strong> {{tableParams.filter()|json}}
 
-<div ng-app="MyApp" ng-controller="MainController">
-    <div ng-grid="gridOptions" style="height: 400px">
+
+            <table ng-table="tableParams" show-filter="true" class="table">
+                <tr ng-repeat="user in $data">
+                    <td data-title="'ID'" sortable="'ID'" filter="{ 'ID': 'text' }">
+                        {{user.ID}}
+                    </td>
+                    <td data-title="'Email'" sortable="'Email'" filter="{ 'Email': 'text' }">
+                        {{user.Email}}
+                    </td>
+                    <td data-title="'Password'" sortable="'Password'" filter="{ 'Password': 'text' }">
+                        {{user.Password}}
+                    </td>
+                    <td data-title="'Name'" sortable="'Name'" filter="{ 'Name': 'text' }">
+                        {{user.Name}}
+                    </td>
+                    <td data-title="'Last Name'" sortable="'LastName'" filter="{ 'LastName': 'text' }">
+                        {{user.LastName}}
+                    </td>
+                    <td data-title="'Date of birth'" sortable="'DateOfBirth'" filter="{ 'DateOfBirth': 'text' }">
+                        {{user.DateOfBirth}}
+                    </td>
+                    <td data-title="'Added date'" sortable="'AddedDate'" filter="{ 'AddedDate': 'text' }">
+                        {{user.AddedDate}}
+                    </td>
+                    <td data-title="'Activated date'" sortable="'ActivatedDate'" filter="{ 'ActivatedDate': 'text' }">
+                        {{user.ActivatedDate}}
+                    </td>
+                    <td data-title="'Activated link'" sortable="'ActivatedLink'" filter="{ 'ActivatedLink': 'text' }">
+                        {{user.ActivatedLink}}
+                    </td>
+                    <td data-title="'Last visit date'" sortable="'LastVisitDate'" filter="{ 'LastVisitDate': 'text' }">
+                        {{user.LastVisitDate}}
+                    </td>
+                    <td data-title="'Avatar'" sortable="'AvatarPath'" filter="{ 'Avatarpath': 'text' }">
+                        {{user.AvatarPath}}
+                    </td>
+                    <td data-title="'Status'" sortable="'Status'" filter="{ 'Status': 'text' }">
+                        {{user.Status}}
+                    </td>
+                    <td data-title="'Roles'" sortable="'Roles'" filter="{ 'Roles': 'text' }">
+                        <div ng-repeat="role in user.Roles"> {{role.Name}} </div>
+                    </td>
+                </tr>
+            </table>
     </div>
 </div>

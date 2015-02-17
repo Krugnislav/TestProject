@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
@@ -63,7 +64,7 @@ namespace TestProject.Models
         [Display(Name = "Статус")]
         public string Status { get; set; }
 
-
+        
         public virtual ICollection<Role> Roles { get; set; }
 
         
