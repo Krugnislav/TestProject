@@ -31,7 +31,7 @@ namespace TestProject.Areas.Admin.Controllers
             var user = CurrentUser;
             if (user != null)
                 if (user.Roles.FirstOrDefault(p => p.ID == 1) != null)
-                return View(db.Users.ToList());
+                return View();
             return RedirectToAction("Index", "LoginAdmin");
         }
 
@@ -68,6 +68,10 @@ namespace TestProject.Areas.Admin.Controllers
             {
                 logger.Info("User created");
                 user.AddedDate = System.DateTime.Now;
+                user.ActivatedLink = user.GetActivateUrl();
+                NotifyMail.SendNotify("Register", user.Email,
+                    subject => string.Format(subject, HostName),
+                    body => string.Format(body, HttpUtility.UrlEncode(user.ActivatedLink), HostName));
                 db.Users.Add(user);
                 db.SaveChanges();
                 return RedirectToAction("Index");

@@ -28,7 +28,10 @@ namespace TestProject
                                  "~/Scripts/angular.js",
                                  "~/Scripts/angular-route.js",
                                  "~/Scripts/angular-sanitize.js",
-                                 "~/Scripts/ng-table.js"
+                                 "~/Scripts/ng-table.js",
+                                 "~/Scripts/moment.js",
+                                 "~/Scripts/daterangepicker.js",
+                                 "~/Scripts/ng-bs-daterangepicker.js"
                                  ));
 
             // our controller, services, directives and main app js files
@@ -39,6 +42,7 @@ namespace TestProject
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/ng-table.css",
                       "~/Content/bootstrap.css",
+                      "~/Content/daterangepicker-bs3.css",
                       "~/Content/site.css"));
         }
     }

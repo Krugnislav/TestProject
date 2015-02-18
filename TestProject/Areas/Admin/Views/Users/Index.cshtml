@@ -18,18 +18,18 @@
         <button ng-click="tableParams.filter({})" class="btn btn-default pull-right">Clear filter</button>
         <p><strong>Sorting:</strong> {{tableParams.sorting()|json}}
         <p>
-            <strong>Filter:</strong> {{tableParams.filter()|json}}
-
+            <strong>Filter:</strong> {{tableParams.filter()|json}} <br>
+            {{myDateRange}}
 
             <table ng-table="tableParams" show-filter="true" class="table">
                 <tr ng-repeat="user in $data">
-                    <td data-title="'ID'" sortable="'ID'" filter="{ 'ID': 'text' }">
+                    <td data-title="'ID'" sortable="'ID'">
                         {{user.ID}}
                     </td>
                     <td data-title="'Email'" sortable="'Email'" filter="{ 'Email': 'text' }">
-                        {{user.Email}}
+                        <a ng-href="/Admin/Users/Edit/{{user.ID}}">{{user.Email}}</a>
                     </td>
-                    <td data-title="'Password'" sortable="'Password'" filter="{ 'Password': 'text' }">
+                    <td data-title="'Password'">
                         {{user.Password}}
                     </td>
                     <td data-title="'Name'" sortable="'Name'" filter="{ 'Name': 'text' }">
@@ -38,31 +38,36 @@
                     <td data-title="'Last Name'" sortable="'LastName'" filter="{ 'LastName': 'text' }">
                         {{user.LastName}}
                     </td>
-                    <td data-title="'Date of birth'" sortable="'DateOfBirth'" filter="{ 'DateOfBirth': 'text' }">
-                        {{user.DateOfBirth}}
+                    <td data-title="'Date of birth'" sortable="'DateOfBirth'" filter="{ 'DateOfBirth': 'dateofbirth' }">
+                        {{user.DateOfBirth | date:'dd.MM.yyyy'}}
                     </td>
                     <td data-title="'Added date'" sortable="'AddedDate'" filter="{ 'AddedDate': 'text' }">
-                        {{user.AddedDate}}
+                        {{user.AddedDate | date:'dd.MM.yyyy'}}
                     </td>
                     <td data-title="'Activated date'" sortable="'ActivatedDate'" filter="{ 'ActivatedDate': 'text' }">
-                        {{user.ActivatedDate}}
-                    </td>
-                    <td data-title="'Activated link'" sortable="'ActivatedLink'" filter="{ 'ActivatedLink': 'text' }">
-                        {{user.ActivatedLink}}
+                        {{user.ActivatedDate | date:'dd.MM.yyyy'}}
                     </td>
                     <td data-title="'Last visit date'" sortable="'LastVisitDate'" filter="{ 'LastVisitDate': 'text' }">
-                        {{user.LastVisitDate}}
+                        {{user.LastVisitDate | date:'dd.MM.yyyy'}}
                     </td>
-                    <td data-title="'Avatar'" sortable="'AvatarPath'" filter="{ 'Avatarpath': 'text' }">
+                    <td data-title="'Avatar'">
                         {{user.AvatarPath}}
                     </td>
                     <td data-title="'Status'" sortable="'Status'" filter="{ 'Status': 'text' }">
                         {{user.Status}}
                     </td>
-                    <td data-title="'Roles'" sortable="'Roles'" filter="{ 'Roles': 'text' }">
+                    <td data-title="'Roles'" filter="{ 'Roles': 'text' }">
                         <div ng-repeat="role in user.Roles"> {{role.Name}} </div>
                     </td>
                 </tr>
             </table>
+            <script type="text/ng-template" id="ng-table/filters/dateofbirth.html">
+                <input type="daterange" ng-model="tableParams.filter()['DateOfBirth']"
+                       min-date="1900-09-10"
+                       format="DD.MM.YYYY"
+                       separator="-"
+                       style="width: 200px" name="reservation" id="reservation" class="form-control" value="01/01/2015 - 01/23/2015" />
+            </script>
+           
     </div>
 </div>

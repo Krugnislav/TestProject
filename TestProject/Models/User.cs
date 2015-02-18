@@ -4,9 +4,12 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Expressions;
+using System.Reflection;
 using System.Web;
 using System.Web.Mvc;
 using TestProject.Models;
+using TestProject.Tools;
 
 namespace TestProject.Models
 {
@@ -67,6 +70,10 @@ namespace TestProject.Models
         
         public virtual ICollection<Role> Roles { get; set; }
 
+        public string GetActivateUrl()
+        {
+            return Guid.NewGuid().ToString("N");
+        }
         
     }
 
@@ -76,6 +83,7 @@ namespace TestProject.Models
             : base("name=UserDbContext")
         {
         }
+
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }
 
@@ -83,5 +91,11 @@ namespace TestProject.Models
         {
             return Users.FirstOrDefault(p => string.Compare(p.Email, email, true) == 0 && p.Password == password);
         }
+
+        public User Activated(string ActivatedLink)
+        {
+            return Users.FirstOrDefault(p => string.Compare(p.ActivatedLink, ActivatedLink, true) == 0);
+        }
+   
     }
 }
