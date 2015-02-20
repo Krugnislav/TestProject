@@ -1,12 +1,15 @@
-﻿var app = angular.module('main', ['ngRoute', 'ngBootstrap', 'ngTable']).
-controller('DemoCtrl', function ($scope, $http, $filter, ngTableParams) {
-    $scope.myDateRange;
+﻿var app = angular.module('main', ['ngRoute', 'daterangepicker', 'ngTable', 'validation', 'validation.rule', 'ui.bootstrap']).
+controller('DemoCtrl', function ($scope, $http, $filter, $location, ngTableParams) {
+
     $scope.tableParams = new ngTableParams({
         page: 1,            // show first page
         count: 10,          // count per page
         filter: {
-            Name: ''       // initial filter
-        },
+            FilterDateOfBirth : { startDate: null, endDate: null },
+            FilterAddedDate: { startDate: null, endDate: null },
+            FilterActivatedDate: { startDate: null, endDate: null },
+            FilterLastVisitDate: { startDate: null, endDate: null }
+},
         sorting: {
             ID: 'asc'     // initial sorting
         }
@@ -17,7 +20,7 @@ controller('DemoCtrl', function ($scope, $http, $filter, ngTableParams) {
                 $scope.SortColumn = i;
                 $scope.SortOrder = params.sorting()[i];
             }
-            $scope.myDateRange = $filter('date')(params.filter()['DateOfBirth']['startDate'], "dd.MM.yyyy") + '-' + $filter('date')(params.filter()['DateOfBirth']['endDate'], "dd.MM.yyyy");
+            $scope.myDateRange;
             var p = {
                 PageNumber: $scope.tableParams.page(),
                 PageSize: $scope.tableParams.count(),
@@ -27,13 +30,18 @@ controller('DemoCtrl', function ($scope, $http, $filter, ngTableParams) {
                 FilterID: params.filter()['ID'],
                 FilterEmail: params.filter()['Email'],
                 FilterLastName: params.filter()['LastName'],
-                FilterDateOfBirth: params.filter()['DateOfBirth']['startDate'] + '-' + params.filter()['DateOfBirth']['endDate'],
-                FilterAddedDate: params.filter()['AddedDate'],
-                FilterActivatedDate: params.filter()['ActivatedDate'],
-                FilterLastVisitDate: params.filter()['LastVisitDate'],
+                FilterDateOfBirthStart: params.filter().FilterDateOfBirth.startDate,
+                FilterDateOfBirthEnd: params.filter().FilterDateOfBirth.endDate,
+                FilterAddedDateStart: params.filter().FilterAddedDate.startDate,
+                FilterAddedDateEnd: params.filter().FilterAddedDate.endDate,
+                FilterActivatedDateStart: params.filter().FilterActivatedDate.startDate,
+                FilterActivatedDateEnd: params.filter().FilterActivatedDate.endDate,
+                FilterLastVisitDateStart: params.filter().FilterLastVisitDate.startDate,
+                FilterLastVisitDateEnd: params.filter().FilterLastVisitDate.endDate,
                 FilterRoles: params.filter()['Roles']
-        };
-            $http.get('admin/api/Table', { params: p }) //наш контроллер с методом для получания списка
+            };
+            var url = $location.protocol() + '://' + $location.host() + ':' + $location.port() + '/Admin/api/Table';
+            $http.get(url, { params: p }) //наш контроллер с методом для получания списка
             .success(function(data, status, headers, config) {
                 params.total(data.totalItems);
                 $defer.resolve(data.items);
@@ -42,5 +50,13 @@ controller('DemoCtrl', function ($scope, $http, $filter, ngTableParams) {
             });
         }
     });
+
+    $scope.clearFilter = function () {
+        $scope.tableParams.filter({});
+        $scope.tableParams.filter().FilterDateOfBirth = { startDate: null, endDate: null };
+        $scope.tableParams.filter().FilterAddedDate = { startDate: null, endDate: null };
+        $scope.tableParams.filter().FilterActivatedDate = { startDate: null, endDate: null };
+        $scope.tableParams.filter().FilterLastVisitDate = { startDate: null, endDate: null };
+    };
 
 });

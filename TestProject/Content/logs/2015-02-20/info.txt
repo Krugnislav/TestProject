@@ -1,0 +1,142 @@
+2015-02-20 08:35:49.3117|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 08:37:34.8557|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 08:41:49.1842|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 08:43:11.8380|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 08:47:48.9808|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 08:49:01.3910|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 08:49:21.2851|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 08:51:12.2925|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 08:55:09.1020|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 09:02:33.1674|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 09:04:06.0497|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 09:05:33.9387|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 09:06:11.1909|INFO|TestProject.Areas.Admin.Controllers.UsersController|Try to create user
+2015-02-20 09:12:13.1396|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 09:17:08.3145|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 09:17:40.6293|INFO|TestProject.Areas.Admin.Controllers.UsersController|Try to create user
+2015-02-20 09:18:35.8815|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 09:18:58.6848|INFO|TestProject.Areas.Admin.Controllers.UsersController|Try to create user
+2015-02-20 09:19:37.8900|INFO|TestProject.Areas.Admin.Controllers.UsersController|Try to create user
+2015-02-20 09:24:31.3658|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 09:25:45.1770|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 09:27:25.6518|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 09:28:29.0964|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 09:31:35.9741|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 09:47:24.5013|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 09:49:52.2478|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 09:50:28.4189|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 09:51:17.0996|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 09:52:22.9384|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 09:54:51.9649|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 09:57:26.5718|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 09:57:50.3871|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 09:59:38.8483|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 10:01:15.5019|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 10:05:52.1807|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 10:06:51.4401|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 10:08:17.5850|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 10:10:02.1920|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 10:11:39.2515|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 10:37:43.6020|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 10:38:40.7183|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 10:40:27.9674|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 10:41:47.0629|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 10:43:40.5294|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 10:44:56.5068|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 10:46:04.0376|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 10:47:02.1090|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 10:51:37.2567|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 10:53:05.9038|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 10:55:09.4618|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 11:10:00.9738|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 11:10:48.0855|INFO|TestProject.Areas.Admin.Controllers.UsersController|Try to create user
+2015-02-20 11:13:38.9143|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 11:13:58.6164|INFO|TestProject.Areas.Admin.Controllers.UsersController|Try to create user
+2015-02-20 11:16:12.0851|INFO|TestProject.Areas.Admin.Controllers.UsersController|Try to create user
+2015-02-20 11:21:25.4540|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 11:22:24.1933|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 11:22:48.0287|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 11:42:19.4237|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 11:50:40.7274|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 11:51:43.5570|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 12:00:18.1984|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 12:04:18.9342|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 12:07:54.3705|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 12:08:47.5665|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 12:09:29.5369|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 12:11:40.2804|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 12:12:37.5517|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 12:14:51.4964|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 12:17:08.7012|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 12:23:51.0412|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 12:24:44.5523|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 12:25:30.4979|INFO|TestProject.Areas.Admin.Controllers.UsersController|Try to create user
+2015-02-20 12:26:28.1072|INFO|TestProject.Areas.Admin.Controllers.UsersController|Try to create user
+2015-02-20 12:28:16.2324|INFO|TestProject.Areas.Admin.Controllers.UsersController|Try to create user
+2015-02-20 12:28:24.2438|INFO|TestProject.Areas.Admin.Controllers.UsersController|Try to create user
+2015-02-20 12:29:14.6847|INFO|TestProject.Areas.Admin.Controllers.UsersController|Try to create user
+2015-02-20 12:29:23.2102|INFO|TestProject.Areas.Admin.Controllers.UsersController|User created
+2015-02-20 12:30:44.4269|INFO|TestProject.Areas.Admin.Controllers.UsersController|Try to create user
+2015-02-20 12:30:45.1839|INFO|TestProject.Areas.Admin.Controllers.UsersController|Try to create user
+2015-02-20 12:30:48.1031|INFO|TestProject.Areas.Admin.Controllers.UsersController|User created
+2015-02-20 12:30:49.8782|INFO|TestProject.Areas.Admin.Controllers.UsersController|User created
+2015-02-20 12:34:10.1426|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 12:35:06.1568|INFO|TestProject.Areas.Admin.Controllers.UsersController|Try to create user
+2015-02-20 12:35:07.5709|INFO|TestProject.Areas.Admin.Controllers.UsersController|User created
+2015-02-20 12:38:23.9361|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 12:40:14.9935|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 12:43:21.8672|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 12:49:38.0287|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 12:50:33.5899|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 12:51:27.9390|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 13:01:24.3971|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 13:14:00.2123|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 13:15:31.5425|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 13:31:05.3800|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 13:31:40.2380|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 13:34:16.9219|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 13:36:06.0012|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 13:38:34.5987|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 13:41:13.7288|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 14:10:24.4739|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 14:12:13.5581|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 14:13:06.2391|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 14:16:20.1022|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 14:18:47.7547|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 14:19:31.1482|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 14:21:04.5985|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 14:22:01.4688|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 14:23:05.5404|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 14:24:14.9874|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 14:35:13.7761|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 15:15:05.3149|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 15:16:23.7243|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 15:21:07.0636|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 15:22:40.1929|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 15:23:35.4630|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 15:25:50.7038|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 15:29:54.4217|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 15:30:08.0045|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 15:31:33.6854|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 15:31:48.8933|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 15:33:26.7769|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 15:36:44.2492|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 15:38:36.0956|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 15:40:18.5934|INFO|TestProject.Areas.Admin.Controllers.UsersController|Try to create user
+2015-02-20 15:41:11.8645|INFO|TestProject.Areas.Admin.Controllers.UsersController|Try to create user
+2015-02-20 15:43:46.8463|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 15:48:56.1930|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 15:52:26.7481|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 16:06:21.9348|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 16:12:08.3667|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 16:20:36.8647|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 16:31:33.4483|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 16:33:23.9836|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 16:35:46.5078|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 16:36:15.9224|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 16:40:38.7905|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 16:43:40.2499|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 16:44:27.6466|INFO|TestProject.Areas.Admin.Controllers.UsersController|Try to create user
+2015-02-20 16:48:58.3051|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 16:52:00.6125|INFO|TestProject.MvcApplication|Application Start
+2015-02-20 16:53:10.0355|INFO|TestProject.MvcApplication|Application Start

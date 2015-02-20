@@ -6,23 +6,33 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Mvc;
 using TestProject.Models;
 using TestProject.Tools;
+using TestProject.Tools.Mail;
 
 namespace TestProject.Areas.Admin.Controllers
 {
     
-    [RoutePrefix("admin/api/Table")]
+//    [RoutePrefix("admin/api/Table")]
     public class TableController : ApiController
     {
         private UserDbContext db = new UserDbContext();
+
+        private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
+
+        public dynamic Post([Bind(Include = "ID,Email,Password,Name,LastName,DateOfBirth")] User user)
+        {
+            return "Ok";
+        }
         
-        public dynamic Get([FromUri] Filter filter)
+        public dynamic Get([FromUri] TestProject.Models.Filter filter)
         {
             var items = db.Users.AsQueryable();
 
             bool sortAsc = false;
             if (filter.SortOrder == "asc") sortAsc = true;
+            char[] charsToTrim = { '"', '\'' };
 
             items = items.OrderByFieldName(filter.SortColumn, sortAsc);
 
@@ -36,77 +46,80 @@ namespace TestProject.Areas.Admin.Controllers
                 items = items.Where(i => i.LastName.ToLower().Contains(filter.FilterLastName.ToLower()));
             if (!String.IsNullOrEmpty(filter.FilterStatus))
                 items = items.Where(i => i.Status.Equals(filter.FilterStatus.ToLower()));
-            if (!String.IsNullOrEmpty(filter.FilterStatus))
+            if (!String.IsNullOrEmpty(filter.FilterRoles))
                 items = items.Where(i => i.Roles.FirstOrDefault(p => p.Name.Equals(filter.FilterRoles)) != null);
-            if (!String.IsNullOrEmpty(filter.FilterDateOfBirth))
+            if (filter.FilterDateOfBirthStart != null)
             {
-                string[] splitDate = filter.FilterDateOfBirth.Split('-');
                 try
                 {
-                    DateTime begin = Convert.ToDateTime(splitDate[0]);
-                    items = items.Where(i => i.DateOfBirth >= begin);
-
-                    if (splitDate.Length == 2)
-                    {
-                        DateTime end = Convert.ToDateTime(splitDate[1]);
-                        if (begin < end)
-                            items = items.Where(i => i.DateOfBirth <= end);
-                    }
+                    DateTime date = Convert.ToDateTime(filter.FilterDateOfBirthStart.Trim(charsToTrim));
+                    items = items.Where(i => i.DateOfBirth >= date);
                 }
                 catch (Exception ex) { }
-                
             }
-
-            if (!String.IsNullOrEmpty(filter.FilterAddedDate))
+            if (filter.FilterDateOfBirthEnd != null)
             {
-                string[] splitDate = filter.FilterAddedDate.Split('-');
                 try
                 {
-                    DateTime begin = Convert.ToDateTime(splitDate[0]);
-                    items = items.Where(i => i.AddedDate >= begin);
-
-                    if (splitDate.Length == 2)
-                    {
-                        DateTime end = Convert.ToDateTime(splitDate[1]);
-                        if (begin < end)
-                            items = items.Where(i => i.AddedDate <= end);
-                    }
+                    DateTime date = Convert.ToDateTime(filter.FilterDateOfBirthEnd.Trim(charsToTrim));
+                    items = items.Where(i => i.DateOfBirth <= date);
                 }
                 catch (Exception ex) { }
             }
 
-            if (!String.IsNullOrEmpty(filter.FilterActivatedDate))
+            if (filter.FilterAddedDateStart != null)
             {
-                string[] splitDate = filter.FilterActivatedDate.Split('-');
                 try
                 {
-                    DateTime begin = Convert.ToDateTime(splitDate[0]);
-                    items = items.Where(i => i.ActivatedDate >= begin);
-
-                    if (splitDate.Length == 2)
-                    {
-                        DateTime end = Convert.ToDateTime(splitDate[1]);
-                        if (begin < end)
-                            items = items.Where(i => i.ActivatedDate <= end);
-                    }
+                    DateTime date = Convert.ToDateTime(filter.FilterAddedDateStart.Trim(charsToTrim));
+                    items = items.Where(i => i.AddedDate >= date);
+                }
+                catch (Exception ex) { }
+            }
+            if (filter.FilterAddedDateEnd != null)
+            {
+                try
+                {
+                    DateTime date = Convert.ToDateTime(filter.FilterAddedDateEnd.Trim(charsToTrim));
+                    items = items.Where(i => i.AddedDate <= date);
                 }
                 catch (Exception ex) { }
             }
 
-            if (!String.IsNullOrEmpty(filter.FilterLastVisitDate))
+            if (filter.FilterActivatedDateStart != null)
             {
-                string[] splitDate = filter.FilterLastVisitDate.Split('-');
                 try
                 {
-                    DateTime begin = Convert.ToDateTime(splitDate[0]);
-                    items = items.Where(i => i.LastVisitDate >= begin);
+                    DateTime date = Convert.ToDateTime(filter.FilterActivatedDateStart.Trim(charsToTrim));
+                    items = items.Where(i => i.ActivatedDate >= date);
+                }
+                catch (Exception ex) { }
+            }
+            if (filter.FilterActivatedDateEnd != null)
+            {
+                try
+                {
+                    DateTime date = Convert.ToDateTime(filter.FilterActivatedDateEnd.Trim(charsToTrim));
+                    items = items.Where(i => i.ActivatedDate <= date);
+                }
+                catch (Exception ex) { }
+            }
 
-                    if (splitDate.Length == 2)
-                    {
-                        DateTime end = Convert.ToDateTime(splitDate[1]);
-                        if (begin < end)
-                            items = items.Where(i => i.LastVisitDate <= end);
-                    }
+            if (filter.FilterLastVisitDateStart != null)
+            {
+                try
+                {
+                    DateTime date = Convert.ToDateTime(filter.FilterLastVisitDateStart.Trim(charsToTrim));
+                    items = items.Where(i => i.LastVisitDate >= date);
+                }
+                catch (Exception ex) { }
+            }
+            if (filter.FilterLastVisitDateEnd != null)
+            {
+                try
+                {
+                    DateTime date = Convert.ToDateTime(filter.FilterLastVisitDateEnd.Trim(charsToTrim));
+                    items = items.Where(i => i.LastVisitDate <= date);
                 }
                 catch (Exception ex) { }
             }

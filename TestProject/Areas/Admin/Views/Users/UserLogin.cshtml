@@ -2,10 +2,15 @@
 
 @if (Model != null)
 {
-    <li>@Model.Email</li>
-    <li>@Html.ActionLink("Выход", "Logout", "LoginAdmin")</li>
+    <a class="btn btn-success" type="button" href="admin/loginadmin/logout">@Model.Email</a>
+
+    <a class="btn btn-success" type="button" href="admin/loginadmin/logout" data-toggle="tooltip" data-placement="bottom" title="Выход">
+        <span class=" glyphicon glyphicon-log-out" aria-hidden="true"></span>
+    </a>
 }
 else
 {
-    <li>@Html.ActionLink("Вход", "Index", "LoginAdmin")</li>
+    <a class="btn btn-success" type="button" href="admin/loginadmin/index" data-toggle="tooltip" data-placement="bottom" title="Вход">
+        <span class=" glyphicon glyphicon-log-in" aria-hidden="true"></span>
+    </a>
 }

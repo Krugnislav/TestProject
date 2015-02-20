@@ -16,10 +16,14 @@ namespace TestProject.Models
         public string FilterID { get; set; }
         public string FilterEmail { get; set; }
         public string FilterLastName { get; set; }
-        public string FilterDateOfBirth { get; set; }
-        public string FilterAddedDate { get; set; }
-        public string FilterActivatedDate { get; set; }
-        public string FilterLastVisitDate { get; set; }
+        public string FilterDateOfBirthStart { get; set; }
+        public string FilterDateOfBirthEnd { get; set; }
+        public string FilterAddedDateStart { get; set; }
+        public string FilterAddedDateEnd { get; set; }
+        public string FilterActivatedDateStart { get; set; }
+        public string FilterActivatedDateEnd { get; set; }
+        public string FilterLastVisitDateStart { get; set; }
+        public string FilterLastVisitDateEnd { get; set; }
         public string FilterStatus { get; set; }
         public string FilterRoles { get; set; }
         

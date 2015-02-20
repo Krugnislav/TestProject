@@ -10,64 +10,72 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-
-<div ng-app="main">
-    <div ng-controller="DemoCtrl">
-
-        <button ng-click="tableParams.sorting({})" class="btn btn-default pull-right">Clear sorting</button>
-        <button ng-click="tableParams.filter({})" class="btn btn-default pull-right">Clear filter</button>
-        <p><strong>Sorting:</strong> {{tableParams.sorting()|json}}
-        <p>
-            <strong>Filter:</strong> {{tableParams.filter()|json}} <br>
-            {{myDateRange}}
-
-            <table ng-table="tableParams" show-filter="true" class="table">
-                <tr ng-repeat="user in $data">
-                    <td data-title="'ID'" sortable="'ID'">
-                        {{user.ID}}
-                    </td>
-                    <td data-title="'Email'" sortable="'Email'" filter="{ 'Email': 'text' }">
-                        <a ng-href="/Admin/Users/Edit/{{user.ID}}">{{user.Email}}</a>
-                    </td>
-                    <td data-title="'Password'">
-                        {{user.Password}}
-                    </td>
-                    <td data-title="'Name'" sortable="'Name'" filter="{ 'Name': 'text' }">
-                        {{user.Name}}
-                    </td>
-                    <td data-title="'Last Name'" sortable="'LastName'" filter="{ 'LastName': 'text' }">
-                        {{user.LastName}}
-                    </td>
-                    <td data-title="'Date of birth'" sortable="'DateOfBirth'" filter="{ 'DateOfBirth': 'dateofbirth' }">
-                        {{user.DateOfBirth | date:'dd.MM.yyyy'}}
-                    </td>
-                    <td data-title="'Added date'" sortable="'AddedDate'" filter="{ 'AddedDate': 'text' }">
-                        {{user.AddedDate | date:'dd.MM.yyyy'}}
-                    </td>
-                    <td data-title="'Activated date'" sortable="'ActivatedDate'" filter="{ 'ActivatedDate': 'text' }">
-                        {{user.ActivatedDate | date:'dd.MM.yyyy'}}
-                    </td>
-                    <td data-title="'Last visit date'" sortable="'LastVisitDate'" filter="{ 'LastVisitDate': 'text' }">
-                        {{user.LastVisitDate | date:'dd.MM.yyyy'}}
-                    </td>
-                    <td data-title="'Avatar'">
-                        {{user.AvatarPath}}
-                    </td>
-                    <td data-title="'Status'" sortable="'Status'" filter="{ 'Status': 'text' }">
-                        {{user.Status}}
-                    </td>
-                    <td data-title="'Roles'" filter="{ 'Roles': 'text' }">
-                        <div ng-repeat="role in user.Roles"> {{role.Name}} </div>
-                    </td>
-                </tr>
-            </table>
-            <script type="text/ng-template" id="ng-table/filters/dateofbirth.html">
-                <input type="daterange" ng-model="tableParams.filter()['DateOfBirth']"
-                       min-date="1900-09-10"
-                       format="DD.MM.YYYY"
-                       separator="-"
-                       style="width: 200px" name="reservation" id="reservation" class="form-control" value="01/01/2015 - 01/23/2015" />
-            </script>
-           
+<div class="htmlContents">
+    <div class="bs-example">
+        <div class="container-fluid" ng-app="main">
+            <div ng-controller="DemoCtrl">
+                <table ng-table="tableParams" show-filter="true" class="table">
+                    <tr ng-repeat="user in $data">
+                        <td data-title="'ID'" sortable="'ID'" filter="{ 'ID': 'clear' }">
+                            {{user.ID}}
+                        </td>
+                        <td data-title="'Email'" sortable="'Email'" filter="{ 'Email': 'text' }">
+                            <a ng-href="/Admin/Users/Edit/{{user.ID}}">{{user.Email}}</a>
+                        </td>
+                        <td data-title="'Password'">
+                            {{user.Password}}
+                        </td>
+                        <td data-title="'Name'" sortable="'Name'" filter="{ 'Name': 'text' }">
+                            {{user.Name}}
+                        </td>
+                        <td data-title="'Last Name'" sortable="'LastName'" filter="{ 'LastName': 'text' }">
+                            {{user.LastName}}
+                        </td>
+                        <td data-title="'Date of birth'" sortable="'DateOfBirth'" filter="{ 'DateOfBirth': 'dateofbirth' }">
+                            {{user.DateOfBirth | date:'dd.MM.yyyy'}}
+                        </td>
+                        <td data-title="'Added date'" sortable="'AddedDate'" filter="{ 'AddedDate': 'addeddate' }">
+                            {{user.AddedDate | date:'dd.MM.yyyy'}}
+                        </td>
+                        <td data-title="'Activated date'" sortable="'ActivatedDate'" filter="{ 'ActivatedDate': 'activateddate' }">
+                            {{user.ActivatedDate | date:'dd.MM.yyyy'}}
+                        </td>
+                        <td data-title="'Last visit date'" sortable="'LastVisitDate'" filter="{ 'LastVisitDate': 'lastvisitdate' }">
+                            {{user.LastVisitDate | date:'dd.MM.yyyy'}}
+                        </td>
+                        <td data-title="'Avatar'">
+                            {{user.AvatarPath}}
+                        </td>
+                        <td data-title="'Status'" sortable="'Status'" filter="{ 'Status': 'text' }">
+                            {{user.Status}}
+                        </td>
+                        <td data-title="'Roles'" filter="{ 'Roles': 'text' }">
+                            <div ng-repeat="role in user.Roles"> {{role.Name}} </div>
+                        </td>
+                    </tr>
+                </table>
+                <script type="text/ng-template" id="ng-table/filters/clear.html">
+                    <button ng-click="clearFilter()" class="btn btn-default pull-right" data-toggle="tooltip" data-placement="right" title="Сбросить фильтры">
+                        <span class=" glyphicon glyphicon-remove" aria-hidden="true"></span>
+                    </button>
+                </script>
+                <script type="text/ng-template" id="ng-table/filters/dateofbirth.html">
+                    <input date-range-picker class="form-control date-picker" type="text" ng-model="tableParams.filter().FilterDateOfBirth" />
+                </script>
+                <script type="text/ng-template" id="ng-table/filters/dateofbirth.html">
+                    <input date-range-picker class="form-control date-picker" type="text" ng-model="tableParams.filter().FilterDateOfBirth" />
+                </script>
+                <script type="text/ng-template" id="ng-table/filters/addeddate.html">
+                    <input date-range-picker class="form-control date-picker pull-right" type="text" ng-model="tableParams.filter().FilterAddedDate" />
+                </script>
+                <script type="text/ng-template" id="ng-table/filters/activateddate.html">
+                    <input date-range-picker class="form-control date-picker pull-right" type="text" ng-model="tableParams.filter().FilterActivatedDate" />
+                </script>
+                <script type="text/ng-template" id="ng-table/filters/lastvisitdate.html">
+                    <input date-range-picker class="form-control date-picker pull-right" type="text" ng-model="tableParams.filter().FilterLastVisitDate" />
+                </script>
+            </div>
+        </div>
     </div>
 </div>
+

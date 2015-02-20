@@ -4,72 +4,128 @@
     ViewBag.Title = "Create";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
+<div class="center">
 
-<h2>Create</h2>
+    <h2>Create</h2>
+
+    <div ng-app="valid">
+        <div ng-controller="index">
+            <form name="form">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email"
+                           class="form-control"
+                           name="Email"
+                           ng-model="form.Email"
+                           ng-required="true"/>
+                </div>
+
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password"
+                           class="form-control"
+                           name="password"
+                           ng-model="form.Password"
+                           ng-minlength="6"
+                           ng-required="true" />
+                    <span class="error" ng-show="form.Password.$error.required">
+                        Required!
+                    </span><br>
+                    <span class="error" ng-show="form.Password.$error.minlength">
+                        Too short!
+                    </span>
+                </div>
+
+                <div class="form-group">
+                    <label>Confirm password</label>
+                    <input type="password"
+                           class="form-control"
+                           name="confirmpassword"
+                           ng-model="form.ConfPassword"
+                           ng-minlength="6"
+                           ng-required="true"
+                           ng-pattern={{form.Password}} />
+                    <span class="error" ng-show="form.ConfPassword.$error.required">
+                        Required!
+                    </span><br>
+                    <span class="error" ng-show="form.ConfPassword.$error.minlength">
+                        Too short!
+                    </span>
+                </div>
+
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text"
+                           class="form-control"
+                           name="require, text"
+                           ng-model="form.Name"
+                           ng-minlength="3"
+                           ng-required="true" />
+                    <span class="error" ng-show="form.Name.$error.required">
+                        Required!
+                    </span><br>
+                    <span class="error" ng-show="form.Name.$error.minlength">
+                        Too short!
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label>Last Name</label>
+                    <input type="text"
+                           class="form-control"
+                           name="lastName"
+                           ng-minlength="3"
+                           ng-model="form.LastName" 
+                           ng-required ="true"/>
+                    <span class="error" ng-show="form.LastName.$error.required">
+                        Required!
+                    </span><br>
+                    <span class="error" ng-show="form.LastName.$error.minlength">
+                        Too short!
+                    </span>
+                </div>
 
 
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>User</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                <div class="form-group">
+                    <label>Date of birth</label>
+                    <p class="input-group">
+                        <input type="text"
+                               class="form-control"
+                               datepicker-popup="dd.MM.yyyy"
+                               ng-model="form.DateOfBirth"
+                               is-open="opened"
+                               datepicker-options="dateOptions"
+                               ng-required="true"
+                               close-text="Close"
+                               ng-pattern="/^((\d{2}).(\d{2}).((\d{4})$/" />
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                        </span>
+                    </p>
+                    <span class="error" ng-show="form.DateOfBirth.$error.required">
+                        Required!
+                    </span>
+                    <span class="error" ng-show="form.DateOfBirth.$error.">
+                        Required!
+                    </span>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                </div>
+                <div class="form-group">
+                    <div>
+                        @Html.ActionLink("Back to List", "Index")
+                    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                    <button type="submit pull-right" ng-click="form.submit()" class=" btn btn-default" ng-disabled="Form.$invalid">Submit</button>
+                </div>
+            </form>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.DateOfBirth, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.DateOfBirth, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.DateOfBirth, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
         </div>
     </div>
-}
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
 </div>
-
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+
+
+
+

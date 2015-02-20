@@ -12,6 +12,7 @@ using TestProject.Tools.Mail;
 
 namespace TestProject.Areas.Admin.Controllers
 {
+    [Route("admin/api/Users")]
     public class UsersController : BaseController
     {
         private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
@@ -60,9 +61,9 @@ namespace TestProject.Areas.Admin.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,Email,Password,Name,LastName,DateOfBirth")] User user)
         {
+            
             logger.Info("Try to create user");
             if (ModelState.IsValid)
             {
@@ -79,7 +80,7 @@ namespace TestProject.Areas.Admin.Controllers
 
             logger.Warn("Couldn't create");
 
-            return View(user);
+            return Json("Ok", JsonRequestBehavior.AllowGet);
         }
 
 

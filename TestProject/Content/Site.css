@@ -1,7 +1,28 @@
 ﻿body {
-    padding-top: 50px;
+    padding-top: 10px;
     padding-bottom: 20px;
     padding: 10px !important;
+    
+}
+.center {
+    width: 300px; /* Ширина элемента в пикселах */
+    margin: auto; /* Выравниваем по центру */
+   }
+
+.ramka{
+    padding: 20px; /* Поля вокруг текста */
+    background: #FF9; /* Фоновый цвет блока */
+    border:4px solid #777; /* Ширина вид и цвет рамки */
+    border-radius:30px; /* Радиус скругления углов*/
+    -webkit-border-radius:30px; /* Safari, Chrome */
+    -moz-border-radius:30px; /* Firefox */
+    box-shadow: 0 0 10px 2px #1A3457; /* Тень*/
+    -webkit-box-shadow: 0 0 10px 2px #1A3457; /* Safari, Chrome */
+    -moz-box-shadow: 0 0 10px 2px #1A3457; /* Firefox */
+}
+
+form .ng-dirty.ng-invalid{
+  border: 1px solid #FD0000;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,5 +42,11 @@
 input,
 select,
 textarea {
-    max-width: 280px;
+    max-width: 300px;
 }
+
+.htmlContents {
+    font-size: 15px!important;
+}
+
+

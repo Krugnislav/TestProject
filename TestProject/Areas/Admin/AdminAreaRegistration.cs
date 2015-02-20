@@ -17,15 +17,15 @@ namespace TestProject.Areas.Admin
         public override void RegisterArea(AreaRegistrationContext context) 
         {
             context.Routes.MapHttpRoute(
-            name: "Admin_API",
-            routeTemplate: "Admin/api/{controller}/{id}",
-            defaults: new { id = RouteParameter.Optional }
-            );
+            name: "Admin_Api",
+            routeTemplate: "admin/api/{controller}/{id}",
+            defaults: new { area = "admin", id = RouteParameter.Optional }
+        );
 
             context.MapRoute(
                 "Admin",
                 "Admin/{controller}/{action}/{id}",
-                new {controller = "Users", action = "Index", id = UrlParameter.Optional }
+                new {controller = "LoginAdmin", action = "Index", id = UrlParameter.Optional }
             );
             
         

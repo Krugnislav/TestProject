@@ -28,15 +28,19 @@ namespace TestProject
                                  "~/Scripts/angular.js",
                                  "~/Scripts/angular-route.js",
                                  "~/Scripts/angular-sanitize.js",
+                                 "~/Scripts/angular-validation.js",
+                                 "~/Scripts/angular-validation-rule.js",
                                  "~/Scripts/ng-table.js",
                                  "~/Scripts/moment.js",
+                                 "~/Scripts/ui-bootstrap-custom-0.12.0.js",
                                  "~/Scripts/daterangepicker.js",
-                                 "~/Scripts/ng-bs-daterangepicker.js"
+                                 "~/Scripts/angular-daterangepicker.js"
                                  ));
 
             // our controller, services, directives and main app js files
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
-                                 "~/Scripts/Script.js"
+                                 "~/Scripts/Script.js",
+                                 "~/Scripts/app.js"
                           ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
