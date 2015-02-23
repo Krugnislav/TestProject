@@ -1,6 +1,8 @@
 ﻿var app = angular.module('main', ['ngRoute', 'daterangepicker', 'ngTable', 'validation', 'validation.rule', 'ui.bootstrap']).
 controller('DemoCtrl', function ($scope, $http, $filter, $location, ngTableParams) {
 
+    $scope.roles = {};
+
     $scope.tableParams = new ngTableParams({
         page: 1,            // show first page
         count: 10,          // count per page
@@ -40,7 +42,7 @@ controller('DemoCtrl', function ($scope, $http, $filter, $location, ngTableParam
                 FilterLastVisitDateEnd: params.filter().FilterLastVisitDate.endDate,
                 FilterRoles: params.filter()['Roles']
             };
-            var url = $location.protocol() + '://' + $location.host() + ':' + $location.port() + '/Admin/api/Table';
+            var url = $location.protocol() + '://' + $location.host() + ':' + $location.port() + '/Admin/api/Table/Users';
             $http.get(url, { params: p }) //наш контроллер с методом для получания списка
             .success(function(data, status, headers, config) {
                 params.total(data.totalItems);
@@ -57,6 +59,34 @@ controller('DemoCtrl', function ($scope, $http, $filter, $location, ngTableParam
         $scope.tableParams.filter().FilterAddedDate = { startDate: null, endDate: null };
         $scope.tableParams.filter().FilterActivatedDate = { startDate: null, endDate: null };
         $scope.tableParams.filter().FilterLastVisitDate = { startDate: null, endDate: null };
+    };
+    $scope.editId = -1;
+
+    $scope.setEditId =  function(user) {
+        var url = $location.protocol() + '://' + $location.host() + ':' + $location.port() + '/Admin/api/Table/Roles';
+        $http.get(url) //наш контроллер с методом для получания списка
+            .success(function(data, status, headers, config) {
+                $scope.roles = data;
+                angular.forEach(user.Roles, function(role) {
+                    $scope.roles.splice(role, 1);
+                });
+                $scope.editId = user.ID;
+            }).error(function(data, status, headers, config) {
+                alert(JSON.stringify(data));
+            });
+    }
+
+
+    $scope.save = function (user) {
+        var url = $location.protocol() + '://' + $location.host() + ':' + $location.port() + '/Admin/api/Table/Users';
+        $http.post(url, user) //наш контроллер с методом для получания списка
+        .success(function(data, status, headers, config) {
+            $scope.editId = -1;
+        }).error(function (data, status, headers, config) {
+            alert(JSON.stringify(data));
+        });
+
+
     };
 
 });

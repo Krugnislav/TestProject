@@ -26,10 +26,12 @@
                             {{user.Password}}
                         </td>
                         <td data-title="'Name'" sortable="'Name'" filter="{ 'Name': 'text' }">
-                            {{user.Name}}
+                            <span ng-if="editId!==user.ID">{{user.Name}}</span>
+                            <div ng-if="editId===user.ID"><input class="form-control" type="text" ng-model="user.Name" /></div>
                         </td>
                         <td data-title="'Last Name'" sortable="'LastName'" filter="{ 'LastName': 'text' }">
-                            {{user.LastName}}
+                            <span ng-if="editId!==user.ID">{{user.LastName}}</span>
+                            <div ng-if="editId===user.ID"><input class="form-control" type="text" ng-model="user.LastName" /></div>                        
                         </td>
                         <td data-title="'Date of birth'" sortable="'DateOfBirth'" filter="{ 'DateOfBirth': 'dateofbirth' }">
                             {{user.DateOfBirth | date:'dd.MM.yyyy'}}
@@ -47,10 +49,18 @@
                             {{user.AvatarPath}}
                         </td>
                         <td data-title="'Status'" sortable="'Status'" filter="{ 'Status': 'text' }">
-                            {{user.Status}}
+                            <span ng-if="editId!==user.ID">{{user.Status}}</span>
+                            <div ng-if="editId===user.ID"><input class="form-control" type="text" ng-model="user.Status" /></div>
                         </td>
                         <td data-title="'Roles'" filter="{ 'Roles': 'text' }">
                             <div ng-repeat="role in user.Roles"> {{role.Name}} </div>
+                            <div ng-if="editId===user.ID">
+                                <select class="form-control" ng-model="role" ng-options="role.Name for role in roles"><option></option></select>
+                            </div>
+                        </td>
+                        <td data-title="'Actions'">
+                            <a ng-if="editId!==user.ID" href="" class="btn btn-default btn-xs" ng-click="setEditId(user)">Edit</a>
+                            <a ng-if="editId===user.ID" href="" class="btn btn-primary btn-xs" ng-click="save(user)">Save</a>
                         </td>
                     </tr>
                 </table>

@@ -4,9 +4,9 @@
         .controller('index', ['$scope', '$http', function ($scope, $http) {
 
             // Injector
+            $scope.form = {};
 
-            $scope.form = {
-                submit: function () {
+            $scope.create = function () {
                     $http.post('Create', $scope.form).success(function (res) {
                         if (res.data == 'ok') {
                             $scope.user = {};
@@ -18,7 +18,7 @@
                     }).error(function (err) {
                         alert(err);
                     });
-                }
+                
             };
 
             $scope.disabled = function (date, mode) {

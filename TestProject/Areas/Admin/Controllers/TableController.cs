@@ -21,11 +21,19 @@ namespace TestProject.Areas.Admin.Controllers
 
         private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
 
-        public dynamic Post([Bind(Include = "ID,Email,Password,Name,LastName,DateOfBirth")] User user)
+        [System.Web.Http.ActionName("Users")]
+        public dynamic Post(User user)
         {
             return "Ok";
         }
-        
+
+        [System.Web.Http.ActionName("Roles")]
+        public IQueryable<Role> GetAllRoles()
+        {
+            return db.Roles.AsQueryable();
+        }
+
+        [System.Web.Http.ActionName("Users")]
         public dynamic Get([FromUri] TestProject.Models.Filter filter)
         {
             var items = db.Users.AsQueryable();
