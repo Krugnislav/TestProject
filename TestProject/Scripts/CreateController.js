@@ -12,20 +12,25 @@
                             $scope.user = {};
                             $scope.form.$setPristine();
                             alert('Сообщение отправлено');
+                            location.path('~/Home/Index');
                         } else {
                             alert('Возникла ошибка');
                         }
+                        location.path('~/Home/Index');
+
                     }).error(function (err) {
                         alert(err);
                     });
                 
             };
+            $scope.maxdate = ['01.02.2001'];
 
             $scope.disabled = function (date, mode) {
                 return (mode === 'day' && (date.getDay() === 0 || date.getDay() === 6));
             };
 
             $scope.open = function ($event) {
+                $scope.maxdate = new Date();
                 $event.preventDefault();
                 $event.stopPropagation();
 

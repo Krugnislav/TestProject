@@ -7,13 +7,13 @@ namespace TestProject.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.2-31219")]
-    public sealed partial class MigrateDB3 : IMigrationMetadata
+    public sealed partial class DBMigration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(MigrateDB3));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(DBMigration));
         
         string IMigrationMetadata.Id
         {
-            get { return "201502121331115_MigrateDB3"; }
+            get { return "201502240925102_DB-Migration"; }
         }
         
         string IMigrationMetadata.Source

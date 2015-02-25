@@ -1,11 +1,19 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
+using System.Data.Common;
 using System.Data.Entity;
+using System.Data.Entity.Core.EntityClient;
+using System.Data.Entity.Core.Objects;
+using System.Data.Entity.Infrastructure;
+using System.Data.SqlClient;
+using System.Globalization;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using TestProject.Models;
@@ -67,8 +75,13 @@ namespace TestProject.Models
         [Display(Name = "Статус")]
         public string Status { get; set; }
 
-        
-        public virtual ICollection<Role> Roles { get; set; }
+        private ICollection<Role> _Roles;
+
+        public virtual ICollection<Role> Roles
+        {
+            get { return _Roles ?? (_Roles = new Collection<Role>()); }
+            set { _Roles = value; }
+        }
 
         public string GetActivateUrl()
         {
@@ -96,6 +109,7 @@ namespace TestProject.Models
         {
             return Users.FirstOrDefault(p => string.Compare(p.ActivatedLink, ActivatedLink, true) == 0);
         }
+
    
     }
 }

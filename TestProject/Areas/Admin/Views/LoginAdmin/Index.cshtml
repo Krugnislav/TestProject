@@ -20,15 +20,15 @@
                 @using (Html.BeginForm("Index", "LoginAdmin", FormMethod.Post, new { @class = "form-horizontal" }))
                 {
                     <fieldset>
-                        <legend>Вход</legend>
                         <div class="control-group">
                             <label class="control-label" for="Email">
                                 Email
                             </label>
                             <div class="controls">
-                                @Html.TextBox("Email", Model.Email, new { @class = "input-xlarge" })
-                                <p class="help-block">Введите Email</p>
-                                @Html.ValidationMessage("Email")
+                                <span class="error">
+                                    @Html.TextBox("Email", Model.Email, new { @class = "form-control" })<br>
+                                    @Html.ValidationMessage("Email")
+                                </span>
                             </div>
 
                         </div>
@@ -37,8 +37,10 @@
                                 Пароль
                             </label>
                             <div class="controls">
-                                @Html.Password("Password", Model.Password, new { @class = "input-xlarge" })
-                                @Html.ValidationMessage("Password")
+                                <span class="error">
+                                    @Html.Password("Password", Model.Password, new { @class = "form-control" })<br>
+                                    @Html.ValidationMessage("Password")
+                                </span>
                             </div>
                         </div>
                         <div class="form-actions"> <br>

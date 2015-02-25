@@ -3,7 +3,7 @@ namespace TestProject.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class DBMigration : DbMigration
     {
         public override void Up()
         {
@@ -22,16 +22,17 @@ namespace TestProject.Migrations
                 c => new
                     {
                         ID = c.Int(nullable: false, identity: true),
-                        Email = c.String(nullable: false, maxLength: 150),
+                        Email = c.String(nullable: false),
                         Password = c.String(nullable: false, maxLength: 50),
                         Name = c.String(nullable: false, maxLength: 150),
                         LastName = c.String(nullable: false, maxLength: 150),
                         DateOfBirth = c.DateTime(nullable: false),
-                        AddedDate = c.DateTime(nullable: false),
+                        AddedDate = c.DateTime(),
                         ActivatedDate = c.DateTime(),
                         ActivatedLink = c.String(),
                         LastVisitDate = c.DateTime(),
                         AvatarPath = c.String(),
+                        Status = c.String(),
                     })
                 .PrimaryKey(t => t.ID);
             

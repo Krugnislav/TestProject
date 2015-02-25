@@ -39,8 +39,8 @@ namespace TestProject
 
             // our controller, services, directives and main app js files
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
-                                 "~/Scripts/Script.js",
-                                 "~/Scripts/app.js"
+                                 "~/Scripts/AdminTable.js",
+                                 "~/Scripts/CreateController.js"
                           ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(

@@ -169,6 +169,11 @@
     <Compile Include="Global\Config\MailSetting.cs" />
     <Compile Include="Global\Config\MailTemplates.cs" />
     <Compile Include="Global\Config\MimeTypes.cs" />
+    <Compile Include="Migrations\201502240925102_DB-Migration.cs" />
+    <Compile Include="Migrations\201502240925102_DB-Migration.Designer.cs">
+      <DependentUpon>201502240925102_DB-Migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Filter.cs" />
     <Compile Include="Models\ViewModels\LoginView.cs" />
     <Compile Include="Controllers\BaseController.cs" />
@@ -181,27 +186,6 @@
     <Compile Include="Global\Auth\IUserProvider.cs" />
     <Compile Include="Global\Auth\UserIndentity.cs" />
     <Compile Include="Global\Auth\UserProvider.cs" />
-    <Compile Include="Migrations\201502121212504_InitialCreate.cs" />
-    <Compile Include="Migrations\201502121212504_InitialCreate.Designer.cs">
-      <DependentUpon>201502121212504_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201502121226264_MigrateDB.cs" />
-    <Compile Include="Migrations\201502121226264_MigrateDB.Designer.cs">
-      <DependentUpon>201502121226264_MigrateDB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201502121240257_MigrateDB1.cs" />
-    <Compile Include="Migrations\201502121240257_MigrateDB1.Designer.cs">
-      <DependentUpon>201502121240257_MigrateDB1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201502121251475_MigrateDB2.cs" />
-    <Compile Include="Migrations\201502121251475_MigrateDB2.Designer.cs">
-      <DependentUpon>201502121251475_MigrateDB2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201502121331115_MigrateDB3.cs" />
-    <Compile Include="Migrations\201502121331115_MigrateDB3.Designer.cs">
-      <DependentUpon>201502121331115_MigrateDB3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Class1.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\User.cs" />
@@ -276,6 +260,7 @@
     <Content Include="Areas\Admin\Views\Users\UserLogin.cshtml" />
     <Content Include="Content\ng-table.less" />
     <Content Include="Areas\Default\Views\User\Activate.cshtml" />
+    <Content Include="Areas\Default\Views\Home\Create.cshtml" />
     <None Include="NLog.xsd" />
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="Scripts\angular-route.min.js.map" />
@@ -1046,12 +1031,13 @@
     <Content Include="Scripts\ng-grid-flexible-height.js" />
     <Content Include="Scripts\ng-grid.js" />
     <Content Include="Scripts\ng-grid.min.js" />
-    <Content Include="Scripts\app.js" />
+    <Content Include="Scripts\CreateController.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\ng-table.js" />
+    <Content Include="Scripts\RegisterController.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Scripts\Script.js" />
+    <Content Include="Scripts\AdminTable.js" />
     <Content Include="Scripts\ui-bootstrap-custom-0.12.0.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
@@ -1087,20 +1073,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201502121212504_InitialCreate.resx">
-      <DependentUpon>201502121212504_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201502121226264_MigrateDB.resx">
-      <DependentUpon>201502121226264_MigrateDB.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201502121240257_MigrateDB1.resx">
-      <DependentUpon>201502121240257_MigrateDB1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201502121251475_MigrateDB2.resx">
-      <DependentUpon>201502121251475_MigrateDB2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201502121331115_MigrateDB3.resx">
-      <DependentUpon>201502121331115_MigrateDB3.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201502240925102_DB-Migration.resx">
+      <DependentUpon>201502240925102_DB-Migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

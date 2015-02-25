@@ -3,8 +3,15 @@
     ViewBag.Title = "Вход";
     Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Вход</h2>
+<nav class="navbar navbar-default">
+    <ul class="nav navbar-nav">
+        <li><a href="/home/">Home</a></li>
+        <li><a href="">About us</a></li>
+    </ul>
+</nav>
+<div class="heading">
+    <h1>Login</h1>
+</div>
 
 @using (Html.BeginForm("Index", "Login", FormMethod.Post, new { @class = "form-horizontal" }))
 {

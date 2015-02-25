@@ -1,11 +1,17 @@
 ﻿@model TestProject.Models.User
-
 @if (Model != null)
 {
-    <li>@Model.Email</li>
-    <li>@Html.ActionLink("Выход", "Logout", "Login")</li>
+    <a class="btn btn-link" type="button">@Model.Email</a>
+
+    <a class="btn btn-link" type="button" href="~/login/logout" data-toggle="tooltip" data-placement="bottom" title="Выход">
+        <span class=" glyphicon glyphicon-log-out" aria-hidden="true"></span>
+    </a>
 }
 else
 {
-    <li>@Html.ActionLink("Вход", "Index", "Login")</li>
+    @Html.ActionLink("Зарегистрироваться", "Create")
+    
+    <a class="btn btn-link" type="button" href="~/login/index" data-toggle="tooltip" data-placement="bottom" title="Вход">
+        <span class=" glyphicon glyphicon-log-in" aria-hidden="true"></span>
+    </a>
 }

@@ -2,11 +2,42 @@
     padding-top: 10px;
     padding-bottom: 20px;
     padding: 10px !important;
-    
+    border-top: 5px solid #7e7e7e;
+    background-image: url(../Content/img/bg.png)!important;
+}
+.wrapper {
+        padding: 0 0 50px 0;
+}
+
+header {
+        padding: 20px 0;
+}
+.heading {
+    height: 40px;
+    background: transparent url(../Content/img/h1-bg.png);
+    margin: 30px 0;
+    padding-left: 20px;
+    color: #8f8f8f;
+}
+
+.heading  h1 {
+    display: inline-block;
+    color: #7e7e7e;
+    font: normal 40px/40px 'Oswald', sans-serif;
+    background: url(../Content/img/bg.png);
+    margin: 0;
+    padding: 0 10px;
+    text-transform: uppercase;
+}
+
+.error {
+    color: green;
+    font-size: 12px;
 }
 .center {
     width: 300px; /* Ширина элемента в пикселах */
     margin: auto; /* Выравниваем по центру */
+    color: #8f8f8f;
    }
 
 .ramka{
@@ -19,6 +50,10 @@
     box-shadow: 0 0 10px 2px #1A3457; /* Тень*/
     -webkit-box-shadow: 0 0 10px 2px #1A3457; /* Safari, Chrome */
     -moz-box-shadow: 0 0 10px 2px #1A3457; /* Firefox */
+}
+
+htmlContents {
+    font-size: 10px!important;
 }
 
 form .ng-dirty.ng-invalid{
@@ -44,9 +79,4 @@ select,
 textarea {
     max-width: 300px;
 }
-
-.htmlContents {
-    font-size: 15px!important;
-}
-
 

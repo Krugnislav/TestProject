@@ -2,9 +2,9 @@
 
 @if (Model != null)
 {
-    <a class="btn btn-success" type="button" href="admin/loginadmin/logout">@Model.Email</a>
+    <a class="btn btn-success" type="button">@Model.Email</a>
 
-    <a class="btn btn-success" type="button" href="admin/loginadmin/logout" data-toggle="tooltip" data-placement="bottom" title="Выход">
+    <a class="btn btn-success" type="button" href="~/admin/loginadmin/logout" data-toggle="tooltip" data-placement="bottom" title="Выход">
         <span class=" glyphicon glyphicon-log-out" aria-hidden="true"></span>
     </a>
 }
