@@ -112,10 +112,5 @@ namespace TestProject.Areas.Admin.Controllers
             return result;
         }
 
-        public JsonResult CheckEmail(string email)
-        {
-            var result = db.Users.Where(i => i.Email.Equals(email)).Count() == 0;
-            return Json(result, JsonRequestBehavior.AllowGet);
-        }
     }
 }

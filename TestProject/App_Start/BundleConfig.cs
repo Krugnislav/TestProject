@@ -20,24 +20,29 @@ namespace TestProject
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrapjs").Include(
-                 "~/Scripts/bootstrap.js",
-                 "~/Scripts/angular-ui/ui-bootstrap-tpls.js"
+                 "~/Scripts/bootstrap.js"
                  ));
 
             bundles.Add(new ScriptBundle("~/bundles/angularjs").Include(
                                  "~/Scripts/angular.js",
                                  "~/Scripts/angular-route.js",
                                  "~/Scripts/angular-sanitize.js",
+                                 "~/Scripts/angular-animate.js",
                                  "~/Scripts/angular-validation.js",
                                  "~/Scripts/angular-validation-rule.js",
                                  "~/Scripts/ng-table.js",
                                  "~/Scripts/moment.js",
+                                 "~/Scripts/angular-ui/ui-bootstrap-tpls.js",
                                  "~/Scripts/ui-bootstrap-custom-0.12.0.js",
                                  "~/Scripts/daterangepicker.js",
+                                 "~/Scripts/angular-strap.js",
+                                 "~/Scripts/angular-strap.tpl.js",
+                                 "~/Scripts/angular-file-upload-shim.js",
+                                 "~/Scripts/angular-file-upload.js",
+                                 "~/Scripts/ng-img-crop.js",
                                  "~/Scripts/angular-daterangepicker.js"
                                  ));
 
-            // our controller, services, directives and main app js files
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
                                  "~/Scripts/AdminTable.js",
                                  "~/Scripts/CreateController.js"
@@ -47,6 +52,7 @@ namespace TestProject
                       "~/Content/ng-table.css",
                       "~/Content/bootstrap.css",
                       "~/Content/daterangepicker-bs3.css",
+                      "~/Content/ng-img-crop.css",
                       "~/Content/site.css"));
         }
     }

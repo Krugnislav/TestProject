@@ -1,0 +1,99 @@
+2015-02-26 09:32:20.8458|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 09:33:10.8817|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 09:40:02.1332|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 09:42:00.1099|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 11:13:15.6022|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 11:25:26.7561|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 11:28:00.3508|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 11:28:48.5526|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 11:48:47.1869|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 11:56:13.5194|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 11:58:19.8506|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 11:59:16.7289|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 12:06:48.4297|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 12:14:22.6587|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 13:01:29.5934|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 13:04:10.7586|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 13:39:40.6675|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 13:41:51.3910|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 14:28:50.1842|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 14:33:51.2414|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 14:35:10.7310|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 14:36:42.6092|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 14:38:58.1500|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 14:45:51.0556|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 14:48:43.9855|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 15:07:10.5788|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 15:08:32.6275|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 15:13:58.1601|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 15:15:01.6057|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 15:16:46.1687|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 15:19:32.2792|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 15:23:42.8915|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 15:24:34.5675|INFO|TestProject.Areas.Default.Controllers.UserEditController|User try to registr
+2015-02-26 15:25:55.2431|INFO|TestProject.Areas.Default.Controllers.UserEditController|User try to registr
+2015-02-26 15:26:13.3632|INFO|TestProject.Areas.Default.Controllers.UserEditController|User try to registr
+2015-02-26 15:26:42.9818|INFO|TestProject.Areas.Default.Controllers.UserEditController|User try to registr
+2015-02-26 15:26:56.0426|INFO|TestProject.Areas.Default.Controllers.UserEditController|User try to registr
+2015-02-26 15:27:03.2250|INFO|TestProject.Areas.Default.Controllers.UserEditController|User try to registr
+2015-02-26 15:27:05.1641|INFO|TestProject.Areas.Default.Controllers.UserEditController|User try to registr
+2015-02-26 15:27:08.2143|INFO|TestProject.Areas.Default.Controllers.UserEditController|User try to registr
+2015-02-26 15:27:48.6746|INFO|TestProject.Areas.Default.Controllers.UserEditController|User try to registr
+2015-02-26 15:27:57.0581|INFO|TestProject.Areas.Default.Controllers.UserEditController|User try to registr
+2015-02-26 15:28:57.7236|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 15:29:06.6231|INFO|TestProject.Areas.Default.Controllers.UserEditController|User try to registr
+2015-02-26 15:32:52.2970|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 15:33:17.4654|INFO|TestProject.Areas.Default.Controllers.UserEditController|User try to registr
+2015-02-26 15:37:11.2728|INFO|TestProject.Areas.Default.Controllers.UserEditController|User try to registr
+2015-02-26 15:38:45.4922|INFO|TestProject.Areas.Default.Controllers.UserEditController|User try to registr
+2015-02-26 15:40:04.6217|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 15:40:29.7001|INFO|TestProject.Areas.Default.Controllers.UserEditController|User try to registr
+2015-02-26 15:42:46.8210|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 15:43:23.8901|INFO|TestProject.Areas.Default.Controllers.UserEditController|User try to registr
+2015-02-26 15:46:08.0635|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 15:46:36.8611|INFO|TestProject.Areas.Default.Controllers.UserEditController|User try to registr
+2015-02-26 15:47:18.8145|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 15:47:22.9688|INFO|TestProject.Areas.Default.Controllers.UserEditController|User try to registr
+2015-02-26 15:47:48.4162|INFO|TestProject.Areas.Default.Controllers.UserEditController|User registrated
+2015-02-26 15:52:22.7769|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 15:52:50.7805|INFO|TestProject.Areas.Default.Controllers.UserEditController|User try to registr
+2015-02-26 15:52:56.0218|INFO|TestProject.Areas.Default.Controllers.UserEditController|User registrated
+2015-02-26 15:55:53.7970|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 15:57:19.0669|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 15:57:45.8554|INFO|TestProject.Areas.Default.Controllers.UserEditController|User try to registr
+2015-02-26 15:57:51.6547|INFO|TestProject.Areas.Default.Controllers.UserEditController|User registrated
+2015-02-26 15:59:23.7280|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 16:00:33.0150|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 16:00:58.5654|INFO|TestProject.Areas.Default.Controllers.UserEditController|User try to registr
+2015-02-26 16:01:01.1836|INFO|TestProject.Areas.Default.Controllers.UserEditController|User registrated
+2015-02-26 16:08:05.7178|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 16:08:35.8836|INFO|TestProject.Areas.Default.Controllers.UserEditController|User try to registr
+2015-02-26 16:08:37.1266|INFO|TestProject.Areas.Default.Controllers.UserEditController|User registrated
+2015-02-26 16:14:55.2373|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 16:23:21.9393|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 16:23:51.1649|INFO|TestProject.Areas.Default.Controllers.UserEditController|User try to registr
+2015-02-26 16:23:52.4500|INFO|TestProject.Areas.Default.Controllers.UserEditController|User registrated
+2015-02-26 16:26:28.8689|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 16:27:01.7188|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 16:49:33.0931|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 16:51:26.1916|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 16:52:45.5201|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 16:58:35.2151|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 17:02:38.2080|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 17:21:39.0123|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 17:39:31.5746|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 17:40:21.7395|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 17:41:11.1873|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 17:42:25.6076|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 17:53:20.7370|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 18:09:25.7192|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 18:13:57.3818|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 18:14:40.5472|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 18:15:44.2589|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 18:16:39.3960|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 18:19:02.1662|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 18:20:17.6945|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 18:20:36.2116|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 18:37:17.0808|INFO|TestProject.MvcApplication|Application Start
+2015-02-26 18:38:46.5530|INFO|TestProject.Areas.Default.Controllers.UserEditController|User try to registr
+2015-02-26 18:38:46.5690|INFO|TestProject.Areas.Default.Controllers.UserEditController|User registrated

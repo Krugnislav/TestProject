@@ -28,7 +28,6 @@ namespace TestProject.Models
         [Required(ErrorMessage = "Поле должно быть установлено")]
         [DataType(DataType.EmailAddress)]
         [Display(Name = "Email адрес")]
-        [Remote("CheckEmail", "Users", ErrorMessage = "Такой адрес уже существует")]
         [RegularExpression("^([A-Za-z0-9_\\-\\.])+\\@([A-Za-z0-9_\\-\\.])+\\.([A-Za-z]{2,4})$", ErrorMessage = "Некорректный адрес")]
         public string Email { get; set; }
 

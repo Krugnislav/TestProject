@@ -1,14 +1,12 @@
-﻿@model TestProject.Models.User
-
+﻿
 @{
     ViewBag.Title = "Create";
     Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
 }
-
 <nav class="navbar navbar-default">
     <ul class="nav navbar-nav">
         <li><a href="/home/">Home</a></li>
-        <li><a href="">About us</a></li>
+        <li><a href="/home/about">About us</a></li>
     </ul>
 </nav>
 <div class="heading">
@@ -18,7 +16,6 @@
 <div class="center">
 
         <h2>Create</h2>
-        <div ng-app="valid">
             <div ng-controller="index">
                 <form name="form">
                     <div class="form-group">
@@ -26,7 +23,7 @@
                         <input type="email"
                                class="form-control"
                                name="email"
-                               ng-model="form.Email"
+                               ng-model="user.Email"
                                ng-maxlength="150"
                                ng-model-options="{ updateOn: 'default blur' }"
                                ng-required="true" />
@@ -46,7 +43,7 @@
                         <input type="password"
                                class="form-control"
                                name="password"
-                               ng-model="form.Password"
+                               ng-model="user.Password"
                                ng-minlength="6"
                                ng-maxlength="50"
                                ng-required="true" />
@@ -66,7 +63,7 @@
                         <input type="password"
                                class="form-control"
                                name="confirmpassword"
-                               ng-model="form.ConfPassword"
+                               ng-model="user.ConfPassword"
                                ng-minlength="6"
                                ng-required="true"
                                ng-pattern={{form.Password}} />
@@ -84,7 +81,7 @@
                         <input type="text"
                                class="form-control"
                                name="name"
-                               ng-model="form.Name"
+                               ng-model="user.Name"
                                ng-minlength="3"
                                ng-maxlength="150"
                                ng-required="true" />
@@ -105,7 +102,7 @@
                                name="lastName"
                                ng-minlength="3"
                                ng-maxlength="150"
-                               ng-model="form.LastName"
+                               ng-model="user.LastName"
                                ng-required="true" />
                         <span class="error" ng-show="form.lastName.$error.required">
                             Required!
@@ -126,7 +123,7 @@
                                    class="form-control"
                                    name="dateofbirth"
                                    datepicker-popup="dd.MM.yyyy"
-                                   ng-model="form.DateOfBirth"
+                                   ng-model="user.DateOfBirth"
                                    max-date="maxdate"
                                    is-open="opened"
                                    datepicker-options="dateOptions"
@@ -142,7 +139,6 @@
                         <span class="error" ng-show="form.dateofbirth.$error.pattern">
                             Wrong date format!
                         </span>
-
                     </div>
                     <div class="form-group">
                         @Html.ActionLink("Back to List", "Index")
@@ -152,12 +148,8 @@
                 </form>
 
             </div>
-        </div>
  
 </div>
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
 
 
 

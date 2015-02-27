@@ -1,17 +1,23 @@
 ﻿@model TestProject.Models.User
-@if (Model != null)
-{
-    <a class="btn btn-link" type="button">@Model.Email</a>
 
-    <a class="btn btn-link" type="button" href="~/login/logout" data-toggle="tooltip" data-placement="bottom" title="Выход">
-        <span class=" glyphicon glyphicon-log-out" aria-hidden="true"></span>
-    </a>
-}
-else
-{
-    @Html.ActionLink("Зарегистрироваться", "Create")
-    
-    <a class="btn btn-link" type="button" href="~/login/index" data-toggle="tooltip" data-placement="bottom" title="Вход">
+<div ng-controller="PopoverDemoCtrl">
+    @if (Model != null)
+    {
+
+        <button type="button" class="btn btn-link" data-content="{{popover.content}}" data-template="user/shortmenu" data-animation=" am-flip-x" data-auto-close="1" data-placement="bottom" bs-popover>
+            @Model.Name @Model.LastName
+        </button>
+
+        <a class="btn btn-link" type="button" href="~/login/logout" data-toggle="tooltip" data-placement="bottom" title="Выход">
+            <span class=" glyphicon glyphicon-log-out" aria-hidden="true"></span>
+        </a>
+    }
+    else
+    {
+    @Html.ActionLink("Зарегистрироваться", "Create", "User")
+
+    <button type="button" class="btn btn-link" title="Login" data-content="{{popover.content}}" data-template="home/login" data-animation=" am-flip-x" data-auto-close="1" data-placement="bottom" bs-popover>
         <span class=" glyphicon glyphicon-log-in" aria-hidden="true"></span>
-    </a>
-}
+    </button>
+    }
+</div>

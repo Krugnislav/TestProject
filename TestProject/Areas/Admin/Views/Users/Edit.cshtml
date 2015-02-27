@@ -4,6 +4,9 @@
 <div class="modal-body">
     <div class="center">
         <form name="form">
+            <div ng-if="validationErrors" class="animate-if">
+                <alert type="danger">{{validationErrors}}</alert>
+            </div>
             <div class="form-group">
                 <label>Email</label>
                 <input type="email"

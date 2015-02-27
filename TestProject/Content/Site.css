@@ -40,6 +40,12 @@ header {
     color: #8f8f8f;
    }
 
+.editer {
+    width: 600px; /* Ширина элемента в пикселах */
+    margin: auto; /* Выравниваем по центру */
+    color: #8f8f8f;
+   }
+
 .ramka{
     padding: 20px; /* Поля вокруг текста */
     background: #FF9; /* Фоновый цвет блока */
@@ -50,6 +56,23 @@ header {
     box-shadow: 0 0 10px 2px #1A3457; /* Тень*/
     -webkit-box-shadow: 0 0 10px 2px #1A3457; /* Safari, Chrome */
     -moz-box-shadow: 0 0 10px 2px #1A3457; /* Firefox */
+}
+
+.modal-backdrop.am-fade {
+  opacity: .5;
+  transition: opacity .15s linear;
+  &.ng-enter {
+    opacity: 0;
+    &.ng-enter-active {
+      opacity: .5;
+    }
+  }
+  &.ng-leave {
+    opacity: .5;
+    &.ng-leave-active {
+      opacity: 0;
+    }
+  }
 }
 
 htmlContents {
@@ -79,4 +102,19 @@ select,
 textarea {
     max-width: 300px;
 }
+
+.popover {
+    max-width: 800px;
+    width: auto;
+    background-image: url(../Content/img/bg.png)!important;
+    color: #8f8f8f;
+
+}
+
+.cropArea {
+      background: #E4E4E4;
+      overflow: hidden;
+      width:500px;
+      height:350px;
+    }
 

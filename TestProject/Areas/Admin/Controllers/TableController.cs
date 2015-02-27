@@ -7,6 +7,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Mvc;
+using TestProject.Controllers;
 using TestProject.Models;
 using TestProject.Tools;
 using TestProject.Tools.Mail;
@@ -14,20 +15,24 @@ using TestProject.Tools.Mail;
 namespace TestProject.Areas.Admin.Controllers
 {
     
-//    [RoutePrefix("admin/api/Table")]
-    public class TableController : ApiController
+    public class TableController : BaseApiController
     {
         private UserDbContext db = new UserDbContext();
 
         private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
 
         [System.Web.Http.ActionName("Users")]
-        public dynamic Post([Bind(Include = "ID,Name,LastName,DateOfBirth,AvatarPath,Status, Roles")] User user)
+        public HttpResponseMessage Post([Bind(Include = "ID,Name,LastName,DateOfBirth,AvatarPath,Status, Roles")] User user)
         {
             if (ModelState.IsValid)
             {
                 User userEdited = db.Users.Find(user.ID);
-
+                if (userEdited.Status != user.Status)
+                {
+                    NotifyMail.SendNotify("Edit", user.Email,
+                        subject => string.Format(subject, HostName),
+                        body => string.Format(body, user.Status, HostName));
+                }
                 userEdited.Name = user.Name;
                 userEdited.LastName = user.LastName;
                 userEdited.DateOfBirth = user.DateOfBirth;
@@ -41,18 +46,12 @@ namespace TestProject.Areas.Admin.Controllers
 
                 db.Entry(userEdited).State = EntityState.Modified;
                 db.SaveChanges();
-                
-                return new
-                {
-                    res = "Ok"
-                };
-            }
-            return new
-            {
-                res = "Model is not valid!"
-            };
-        }
 
+                return Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+        }
+        
         [System.Web.Http.ActionName("Roles")]
         public IQueryable<Role> GetAllRoles()
         {

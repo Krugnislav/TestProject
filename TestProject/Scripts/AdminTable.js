@@ -100,15 +100,7 @@ controller('DemoCtrl', function ($scope, $http, $filter, $location, $modal, ngTa
             user.LastName = form.LastName;
             user.DateOfBirth = form.DateOfBirth;
             user.Roles = form.Roles;
-            var url = $location.protocol() + '://' + $location.host() + ':' + $location.port() + '/Admin/api/Table/Users';
-            $http.post(url, user) //наш контроллер с методом для получания списка
-            .success(function (data, status, headers, config) {
-                if (data.res.length == 2) {
-                    $scope.editId = -1;
-                } else alert(data.res);
-            }).error(function (data, status, headers, config) {
-                alert(JSON.stringify(data));
-            });
+            user.Status = form.Status;
         }, function () {
         });
     };
@@ -131,7 +123,7 @@ controller('DemoCtrl', function ($scope, $http, $filter, $location, $modal, ngTa
 
 });
 
-app.controller('ModalInstanceCtrl', function ($scope, $modalInstance, item, statuses, roles) {
+app.controller('ModalInstanceCtrl', function ($scope, $modalInstance, $location, $http, item, statuses, roles) {
 
     $scope.userEdit = item;
 
@@ -152,7 +144,20 @@ app.controller('ModalInstanceCtrl', function ($scope, $modalInstance, item, stat
     };
 
     $scope.ok = function () {
-        $modalInstance.close($scope.userEdit);
+        var url = $location.protocol() + '://' + $location.host() + ':' + $location.port() + '/Admin/api/Table/Users';
+        $http.post(url, $scope.userEdit) //наш контроллер с методом для получания списка
+        .success(function () {
+            $modalInstance.close($scope.userEdit);
+        }).error(function (error) {
+            $scope.validationErrors = [];
+            if (error && angular.isObject(error.ModelState)) {
+                for (var key in error.ModelState) {
+                    $scope.validationErrors.push(error.ModelState[key][0]);
+                }
+            } else {
+                $scope.validationErrors.push('Could not add movie.');
+            };
+        });
     };
 
     $scope.cancel = function () {
