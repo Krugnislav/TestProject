@@ -4,63 +4,85 @@
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
+<style>
+
+</style>
 
 <h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <div class="htmlContents">
     <div class="bs-example">
         <div class="container-fluid" ng-app="main">
             <div ng-controller="DemoCtrl">
+                <button class="btn btn-info" ng-click="create('sm')">
+                    <span class=" glyphicon glyphicon-user" aria-hidden="true">Create new</span>
+                </button>
                 <table ng-table="tableParams" show-filter="true" class="table">
                     <tr ng-repeat="user in $data">
-                        <td data-title="'ID'" sortable="'ID'" filter="{ 'ID': 'clear' }">
+                        <td width="5%" data-title="'ID'" sortable="'ID'" filter="{ 'ID': 'clear' }">
                             {{user.ID}}
                         </td>
-                        <td data-title="'Email'" sortable="'Email'" filter="{ 'Email': 'text' }">
+                        <td width="15%" data-title="'Email'" sortable="'Email'" filter="{ 'Email': 'text' }">
                             <a ng-href="/Admin/Users/Edit/{{user.ID}}">{{user.Email}}</a>
                         </td>
-                        <td data-title="'Password'">
+                        <td width="10%" data-title="'Password'">
                             {{user.Password}}
                         </td>
-                        <td data-title="'Name'" sortable="'Name'" filter="{ 'Name': 'text' }">
+                        <td width="10%" data-title="'Name'" sortable="'Name'" filter="{ 'Name': 'text' }">
                             <span ng-if="editId!==user.ID">{{user.Name}}</span>
-                            <div ng-if="editId===user.ID"><input class="form-control" type="text" ng-model="user.Name" /></div>
-                        </td>
-                        <td data-title="'Last Name'" sortable="'LastName'" filter="{ 'LastName': 'text' }">
-                            <span ng-if="editId!==user.ID">{{user.LastName}}</span>
-                            <div ng-if="editId===user.ID"><input class="form-control" type="text" ng-model="user.LastName" /></div>                        
-                        </td>
-                        <td data-title="'Date of birth'" sortable="'DateOfBirth'" filter="{ 'DateOfBirth': 'dateofbirth' }">
-                            {{user.DateOfBirth | date:'dd.MM.yyyy'}}
-                        </td>
-                        <td data-title="'Added date'" sortable="'AddedDate'" filter="{ 'AddedDate': 'addeddate' }">
-                            {{user.AddedDate | date:'dd.MM.yyyy'}}
-                        </td>
-                        <td data-title="'Activated date'" sortable="'ActivatedDate'" filter="{ 'ActivatedDate': 'activateddate' }">
-                            {{user.ActivatedDate | date:'dd.MM.yyyy'}}
-                        </td>
-                        <td data-title="'Last visit date'" sortable="'LastVisitDate'" filter="{ 'LastVisitDate': 'lastvisitdate' }">
-                            {{user.LastVisitDate | date:'dd.MM.yyyy'}}
-                        </td>
-                        <td data-title="'Avatar'">
-                            {{user.AvatarPath}}
-                        </td>
-                        <td data-title="'Status'" sortable="'Status'" filter="{ 'Status': 'text' }">
-                            <span ng-if="editId!==user.ID">{{user.Status}}</span>
-                            <div ng-if="editId===user.ID"><input class="form-control" type="text" ng-model="user.Status" /></div>
-                        </td>
-                        <td data-title="'Roles'" filter="{ 'Roles': 'text' }">
-                            <div ng-repeat="role in user.Roles"> {{role.Name}} </div>
                             <div ng-if="editId===user.ID">
-                                <select class="form-control" ng-model="role" ng-options="role.Name for role in roles"><option></option></select>
+                                <input type="text"
+                                       class="form-control"
+                                       name="name"
+                                       ng-model="user.Name"
+                                       ng-minlength="3"
+                                       ng-required="true" />
                             </div>
                         </td>
-                        <td data-title="'Actions'">
-                            <a ng-if="editId!==user.ID" href="" class="btn btn-default btn-xs" ng-click="setEditId(user)">Edit</a>
-                            <a ng-if="editId===user.ID" href="" class="btn btn-primary btn-xs" ng-click="save(user)">Save</a>
+                        <td width="10%" data-title="'Last Name'" sortable="'LastName'" filter="{ 'LastName': 'text' }">
+                            <span ng-if="editId!==user.ID">{{user.LastName}}</span>
+                            <div ng-if="editId===user.ID">
+                                <input type="text"
+                                       class="form-control"
+                                       name="lastname"
+                                       ng-model="user.LastName"
+                                       ng-minlength="3"
+                                       ng-required="true" />
+                            </div>
+                        </td>
+                        <td width="20%" data-title="'Date of birth'" sortable="'DateOfBirth'" filter="{ 'DateOfBirth': 'dateofbirth' }">
+                            {{user.DateOfBirth | date:'dd.MM.yyyy'}}
+                        </td>
+                        <td width ="10%" data-title="'Status'" sortable="'Status'" filter="{ 'Status': 'status' }">
+                            <span ng-if="editId!==user.ID">{{user.Status}}</span>
+                            <div ng-if="editId===user.ID">
+                                <select class="form-control" ng-model="user.Status" ng-options="status for status in statuses"><option></option></select>
+                            </div>
+                        </td>
+                        <td width="15%" data-title="'Roles'" filter="{ 'Roles': 'role' }">
+                            <div ng-if="editId!==user.ID" class="animate-if">
+                                <div ng-repeat="role in user.Roles"> {{role.Name}} </div>
+                            </div>
+                            <div ng-if="editId===user.ID" class="animate-if">
+                                <div ng-repeat="role in user.Roles">
+                                    <p class="input-group">
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-link" ng-click="deleteRole(user, role)"><i class="glyphicon glyphicon-minus"></i></button>
+                                        </span>
+                                        {{role.Name}}
+                                    </p>
+                                </div>
+                                <div ng-if="roles.length!==0">
+                                    <p class="input-group">
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-link" ng-click="addRole(user, role)"><i class="glyphicon glyphicon-plus"></i></button>
+                                        </span>
+                                        <select class="form-control" ng-model="role" ng-options="role.Name for role in roles"><option></option></select>
+                                    </p>
+                                </div>
+                            </div>
+                        </td>
+                        <td width = "5%" data-title="''">
+                            <a href="" class="btn btn-default btn-xs" ng-click="open('',user)">Edit</a>
                         </td>
                     </tr>
                 </table>
@@ -72,17 +94,11 @@
                 <script type="text/ng-template" id="ng-table/filters/dateofbirth.html">
                     <input date-range-picker class="form-control date-picker" type="text" ng-model="tableParams.filter().FilterDateOfBirth" />
                 </script>
-                <script type="text/ng-template" id="ng-table/filters/dateofbirth.html">
-                    <input date-range-picker class="form-control date-picker" type="text" ng-model="tableParams.filter().FilterDateOfBirth" />
+                <script type="text/ng-template" id="ng-table/filters/status.html">
+                    <select class="form-control" ng-model="tableParams.filter().status" ng-options="s for s in statuses"><option></option></select>
                 </script>
-                <script type="text/ng-template" id="ng-table/filters/addeddate.html">
-                    <input date-range-picker class="form-control date-picker pull-right" type="text" ng-model="tableParams.filter().FilterAddedDate" />
-                </script>
-                <script type="text/ng-template" id="ng-table/filters/activateddate.html">
-                    <input date-range-picker class="form-control date-picker pull-right" type="text" ng-model="tableParams.filter().FilterActivatedDate" />
-                </script>
-                <script type="text/ng-template" id="ng-table/filters/lastvisitdate.html">
-                    <input date-range-picker class="form-control date-picker pull-right" type="text" ng-model="tableParams.filter().FilterLastVisitDate" />
+                <script type="text/ng-template" id="ng-table/filters/role.html">
+                    <select class="form-control" ng-model="tableParams.filter().Role" ng-options="role.Name for role in RoleFilter"><option></option></select>
                 </script>
             </div>
         </div>

@@ -7,6 +7,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Mvc;
+using TestProject.Controllers;
 using TestProject.Models;
 using TestProject.Tools;
 using TestProject.Tools.Mail;
@@ -14,19 +15,43 @@ using TestProject.Tools.Mail;
 namespace TestProject.Areas.Admin.Controllers
 {
     
-//    [RoutePrefix("admin/api/Table")]
-    public class TableController : ApiController
+    public class TableController : BaseApiController
     {
         private UserDbContext db = new UserDbContext();
 
         private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
 
         [System.Web.Http.ActionName("Users")]
-        public dynamic Post(User user)
+        public HttpResponseMessage Post([Bind(Include = "ID,Name,LastName,DateOfBirth,AvatarPath,Status, Roles")] User user)
         {
-            return "Ok";
-        }
+            if (ModelState.IsValid)
+            {
+                User userEdited = db.Users.Find(user.ID);
+                if (userEdited.Status != user.Status)
+                {
+                    NotifyMail.SendNotify("Edit", user.Email,
+                        subject => string.Format(subject, HostName),
+                        body => string.Format(body, user.Status, HostName));
+                }
+                userEdited.Name = user.Name;
+                userEdited.LastName = user.LastName;
+                userEdited.DateOfBirth = user.DateOfBirth;
+                userEdited.Status = user.Status;
 
+                userEdited.Roles.Clear();
+                foreach (var role in user.Roles)
+                {
+                    userEdited.Roles.Add(db.Roles.Find(role.ID));
+                }
+
+                db.Entry(userEdited).State = EntityState.Modified;
+                db.SaveChanges();
+
+                return Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+        }
+        
         [System.Web.Http.ActionName("Roles")]
         public IQueryable<Role> GetAllRoles()
         {
@@ -84,53 +109,6 @@ namespace TestProject.Areas.Admin.Controllers
                 }
                 catch (Exception ex) { }
             }
-            if (filter.FilterAddedDateEnd != null)
-            {
-                try
-                {
-                    DateTime date = Convert.ToDateTime(filter.FilterAddedDateEnd.Trim(charsToTrim));
-                    items = items.Where(i => i.AddedDate <= date);
-                }
-                catch (Exception ex) { }
-            }
-
-            if (filter.FilterActivatedDateStart != null)
-            {
-                try
-                {
-                    DateTime date = Convert.ToDateTime(filter.FilterActivatedDateStart.Trim(charsToTrim));
-                    items = items.Where(i => i.ActivatedDate >= date);
-                }
-                catch (Exception ex) { }
-            }
-            if (filter.FilterActivatedDateEnd != null)
-            {
-                try
-                {
-                    DateTime date = Convert.ToDateTime(filter.FilterActivatedDateEnd.Trim(charsToTrim));
-                    items = items.Where(i => i.ActivatedDate <= date);
-                }
-                catch (Exception ex) { }
-            }
-
-            if (filter.FilterLastVisitDateStart != null)
-            {
-                try
-                {
-                    DateTime date = Convert.ToDateTime(filter.FilterLastVisitDateStart.Trim(charsToTrim));
-                    items = items.Where(i => i.LastVisitDate >= date);
-                }
-                catch (Exception ex) { }
-            }
-            if (filter.FilterLastVisitDateEnd != null)
-            {
-                try
-                {
-                    DateTime date = Convert.ToDateTime(filter.FilterLastVisitDateEnd.Trim(charsToTrim));
-                    items = items.Where(i => i.LastVisitDate <= date);
-                }
-                catch (Exception ex) { }
-            }
 
             int nTotalItems = items.Count();
 
@@ -139,6 +117,7 @@ namespace TestProject.Areas.Admin.Controllers
 
             return new
             {
+                roles = db.Roles.AsQueryable(),
                 totalItems = nTotalItems,
                 items = items.ToArray()
             };

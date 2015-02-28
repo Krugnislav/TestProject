@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
@@ -23,7 +24,14 @@ namespace TestProject.Models
         [DataType(DataType.Text)]
         public string Name { get; set; }
 
+        private ICollection<User> _Users;
+
         [JsonIgnore]
-        public virtual ICollection<User> Users { get; set; } 
+        public virtual ICollection<User> Users
+        {
+            get { return _Users ?? (_Users = new Collection<User>()); }
+            set { _Users = value; }
+        }
+
     }
 }

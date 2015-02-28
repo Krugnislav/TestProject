@@ -1,0 +1,142 @@
+2015-02-25 09:00:12.2621|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 09:03:21.6009|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 09:34:17.5132|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 09:38:50.2548|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 09:40:47.5225|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 09:41:37.5693|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 09:42:14.1434|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 09:42:57.4899|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 09:51:44.5291|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 10:00:31.0812|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 10:02:04.1365|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 10:07:49.3312|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 10:09:38.4685|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 10:11:13.0589|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 10:12:39.5358|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 10:15:13.0226|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 10:17:11.9924|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 10:18:18.8312|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 10:20:21.4863|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 10:21:26.3200|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 10:23:17.5213|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 10:44:15.6913|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 10:50:15.8029|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 10:50:51.4969|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 10:52:03.5090|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 10:53:05.9266|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 10:53:34.4342|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 11:13:21.4681|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 11:14:36.5434|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 11:15:59.7232|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 11:16:56.2214|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 11:17:55.3938|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 11:19:08.8440|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 11:23:26.6808|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 11:24:35.5537|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 11:27:50.3338|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 11:29:17.7178|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 11:31:31.4415|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 11:43:07.9373|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 11:44:42.3627|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 11:50:47.3946|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 11:56:17.7415|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 12:00:24.4536|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 12:01:36.8608|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 12:07:45.3278|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 12:09:40.7624|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 12:14:34.9453|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 12:14:58.0786|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 12:15:33.8326|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 12:16:53.5072|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 12:20:48.9676|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 12:25:26.2725|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 12:29:22.6690|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 12:47:38.3087|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 12:51:12.3649|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 12:54:24.7779|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 12:56:08.9869|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 12:57:01.2169|INFO|TestProject.Areas.Admin.Controllers.UsersController|Try to create user
+2015-02-25 12:57:08.2753|INFO|TestProject.Areas.Admin.Controllers.UsersController|User created
+2015-02-25 14:06:01.2700|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 14:08:20.8880|INFO|TestProject.Areas.Admin.Controllers.UsersController|Try to create user
+2015-02-25 14:08:21.8800|INFO|TestProject.Areas.Admin.Controllers.UsersController|User created
+2015-02-25 14:19:36.4516|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 14:20:39.9412|INFO|TestProject.Areas.Admin.Controllers.UsersController|Try to create user
+2015-02-25 14:21:45.1740|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 14:21:52.6054|INFO|TestProject.Areas.Admin.Controllers.UsersController|Try to create user
+2015-02-25 14:24:31.9945|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 14:25:51.9791|INFO|TestProject.Areas.Admin.Controllers.UsersController|Try to create user
+2015-02-25 14:25:53.7142|INFO|TestProject.Areas.Admin.Controllers.UsersController|Try to create user
+2015-02-25 14:26:29.1742|INFO|TestProject.Areas.Admin.Controllers.UsersController|Try to create user
+2015-02-25 14:26:49.7504|INFO|TestProject.Areas.Admin.Controllers.UsersController|Try to create user
+2015-02-25 14:26:51.5275|INFO|TestProject.Areas.Admin.Controllers.UsersController|User created
+2015-02-25 14:27:11.3736|INFO|TestProject.Areas.Admin.Controllers.UsersController|Try to create user
+2015-02-25 14:30:52.8863|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 14:31:39.0469|INFO|TestProject.Areas.Admin.Controllers.UsersController|Try to create user
+2015-02-25 14:31:40.8740|INFO|TestProject.Areas.Admin.Controllers.UsersController|User created
+2015-02-25 14:32:48.2579|INFO|TestProject.Areas.Admin.Controllers.UsersController|Try to create user
+2015-02-25 14:32:49.2830|INFO|TestProject.Areas.Admin.Controllers.UsersController|User created
+2015-02-25 14:34:06.0433|INFO|TestProject.Areas.Admin.Controllers.UsersController|Try to create user
+2015-02-25 14:34:06.0433|INFO|TestProject.Areas.Admin.Controllers.UsersController|User created
+2015-02-25 14:36:46.3055|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 14:37:32.7042|INFO|TestProject.Areas.Admin.Controllers.UsersController|Try to create user
+2015-02-25 14:37:33.8532|INFO|TestProject.Areas.Admin.Controllers.UsersController|User created
+2015-02-25 14:38:18.1088|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 14:39:02.3913|INFO|TestProject.Areas.Admin.Controllers.UsersController|Try to create user
+2015-02-25 14:39:02.9333|INFO|TestProject.Areas.Admin.Controllers.UsersController|User created
+2015-02-25 14:41:15.1199|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 14:42:56.2567|INFO|TestProject.Areas.Admin.Controllers.UsersController|Try to create user
+2015-02-25 14:42:56.2567|INFO|TestProject.Areas.Admin.Controllers.UsersController|User created
+2015-02-25 14:43:09.6874|INFO|TestProject.Areas.Admin.Controllers.UsersController|Try to create user
+2015-02-25 14:44:51.2912|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 14:46:22.0624|INFO|TestProject.Areas.Admin.Controllers.UsersController|Try to create user
+2015-02-25 14:46:22.6655|INFO|TestProject.Areas.Admin.Controllers.UsersController|User created
+2015-02-25 14:51:50.9623|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 14:55:24.9475|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 14:57:17.4069|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 14:58:55.2565|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 15:03:17.4615|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 15:06:23.7012|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 15:18:23.5413|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 15:25:57.9843|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 15:28:51.6113|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 15:34:00.4599|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 15:36:58.7581|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 15:40:10.1141|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 15:46:06.6065|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 15:48:05.6743|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 15:50:03.3580|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 15:52:40.8620|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 15:53:24.1385|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 15:54:05.9089|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 15:55:47.4967|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 15:56:49.9993|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 15:59:04.1419|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 16:00:13.7349|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 16:03:21.9297|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 16:05:35.6213|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 16:08:30.1653|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 16:08:52.2886|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 16:25:12.6857|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 16:38:31.4273|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 16:41:19.0879|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 16:42:51.6052|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 16:49:21.7435|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 16:51:38.8524|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 16:53:02.6332|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 17:04:46.1674|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 17:05:50.2521|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 17:10:58.4087|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 17:12:21.0684|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 17:17:25.4728|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 17:18:38.9560|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 17:20:06.1190|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 17:23:31.3568|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 17:26:19.7634|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 17:31:43.3409|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 17:34:22.7910|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 17:36:08.2801|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 17:37:59.3894|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 17:40:38.1675|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 17:44:30.0598|INFO|TestProject.MvcApplication|Application Start
+2015-02-25 17:49:18.5203|INFO|TestProject.MvcApplication|Application Start

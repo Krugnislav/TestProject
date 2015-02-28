@@ -1,0 +1,12 @@
+﻿@model TestProject.Models.User
+<div class="popover" tabindex="-1" ng-show="content">
+    <div class="arrow"></div>
+    <h3 class="popover-title" ng-bind-html="title" ng-show="title">
+    </h3>
+    <div class="popover-content">
+        @Model.Email
+        <a class="btn btn-link" type="button" href="user/PrivateOffice">
+            Личный кабинет
+        </a>
+    </div>
+</div>

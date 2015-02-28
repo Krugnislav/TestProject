@@ -41,25 +41,13 @@ namespace TestProject.Areas.Admin.Controllers
             return RedirectToAction("Index", "LoginAdmin");
         }
 
-        // GET: Users/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            User user = db.Users.Find(id);
-            if (user == null)
-            {
-                return HttpNotFound();
-            }
-            return View(user);
-        }
-
         // GET: Users/Create
         public ActionResult Create()
         {
-            return View();
+            var user = CurrentUser;
+            if ((user == null) || (user.Roles.FirstOrDefault(p => p.ID == 1) == null))
+                return RedirectToAction("Index", "LoginAdmin");
+            return PartialView();
         }
 
         // POST: Users/Create
@@ -68,9 +56,12 @@ namespace TestProject.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult Create([Bind(Include = "ID,Email,Password,Name,LastName,DateOfBirth")] User user)
         {
+            var userAuth = CurrentUser;
+            if ((userAuth == null) || (userAuth.Roles.FirstOrDefault(p => p.ID == 1) == null))
+                return RedirectToAction("Index", "LoginAdmin");
             
             logger.Info("Try to create user");
-            if (ModelState.IsValid)
+            if ((ModelState.IsValid) && (CheckAnEmail(user.Email)))
             {
                 logger.Info("User created");
                 user.AddedDate = System.DateTime.Now;
@@ -80,28 +71,19 @@ namespace TestProject.Areas.Admin.Controllers
                     body => string.Format(body, HttpUtility.UrlEncode(user.ActivatedLink), HostName));
                 db.Users.Add(user);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return Json("Ok", JsonRequestBehavior.AllowGet);
             }
 
             logger.Warn("Couldn't create");
 
-            return Json("Ok", JsonRequestBehavior.AllowGet);
+            return Json("Invalid form!", JsonRequestBehavior.AllowGet);
         }
 
 
         // GET: Users/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit()
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            User user = db.Users.Find(id);
-            if (user == null)
-            {
-                return HttpNotFound();
-            }
-            return View(user);
+            return PartialView();
         }
     
         // POST: Users/Edit/5
@@ -117,33 +99,7 @@ namespace TestProject.Areas.Admin.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(user);
-        }
-
-        // GET: Users/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            User user = db.Users.Find(id);
-            if (user == null)
-            {
-                return HttpNotFound();
-            }
-            return View(user);
-        }
-
-        // POST: Users/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            User user = db.Users.Find(id);
-            db.Users.Remove(user);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            return PartialView(user);
         }
 
         protected override void Dispose(bool disposing)
@@ -155,10 +111,11 @@ namespace TestProject.Areas.Admin.Controllers
             base.Dispose(disposing);
         }
 
-        public JsonResult CheckEmail(string email)
+        public bool CheckAnEmail(string email)
         {
-            var result = db.Users.Where(i => i.Email.Equals(email)).Count() == 0;
-            return Json(result, JsonRequestBehavior.AllowGet);
+            bool result = db.Users.Where(i => i.Email.Equals(email)).Count() == 0;
+            return result;
         }
+
     }
 }

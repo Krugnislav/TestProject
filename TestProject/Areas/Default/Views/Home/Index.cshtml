@@ -2,9 +2,13 @@
     ViewBag.Title = "TestProject";
     Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
 }
-
-<h2>LessonProject</h2>
-
-<p>
-    <li>@Html.ActionLink("Send an email", "SendEmail", "Home")</li>
-</p>
+<nav class="navbar navbar-default">
+    <ul class="nav navbar-nav">
+        <li class="active"><a href="/home/">Home</a></li>
+        <li><a href="/home/about">About us</a></li>
+    </ul>
+</nav>
+<div class="heading">
+    <h1>Home</h1>
+</div>
+        Здесь скоро будет какой-нибудь контент.

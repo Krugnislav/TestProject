@@ -1,0 +1,185 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+}
+<script type="text/javascript">
+    (function () {
+        'use strict';
+        angular.module("valid").value("user", @Html.Raw(Model));
+    })();
+</script>
+
+<nav class="navbar navbar-default">
+    <ul class="nav navbar-nav">
+        <li><a href="/home/">Home</a></li>
+        <li><a href="/home/about">About us</a></li>
+    </ul>
+</nav>
+<div class="heading">
+    <h1>Private Office</h1>
+</div>
+
+<div ng-controller="UserEditController">
+    <div class="editer">
+        <div class="row">
+            <div class="col-xs-6">
+                <form name="form">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email"
+                               class="form-control"
+                               name="email"
+                               ng-model="user.email"
+                               ng-maxlength="150"
+                               ng-model-options="{ updateOn: 'default blur' }"
+                               ng-required="true" />
+                        <span class="error" ng-show="form.email.$error.required">
+                            Required!
+                        </span>
+                        <span class="error" ng-show="form.email.$error.email">
+                            Wrong email!
+                        </span>
+                        <span class="error" ng-show="form.email.$error.maxlength">
+                            Too long!
+                        </span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password"
+                               class="form-control"
+                               name="password"
+                               ng-model="user.password"
+                               ng-minlength="6"
+                               ng-maxlength="50"
+                               ng-required="true" />
+                        <span class="error" ng-show="form.password.$error.required">
+                            Required!
+                        </span>
+                        <span class="error" ng-show="form.password.$error.minlength">
+                            Too short!
+                        </span>
+                        <span class="error" ng-show="form.password.$error.maxlength">
+                            Too long!
+                        </span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>New password</label>
+                        <input type="password"
+                               class="form-control"
+                               name="newpassword"
+                               ng-model="user.newpassword"
+                               ng-minlength="6"
+                               ng-maxlength="50" />
+                        <span class="error" ng-show="form.password.$error.minlength">
+                            Too short!
+                        </span>
+                        <span class="error" ng-show="form.password.$error.maxlength">
+                            Too long!
+                        </span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Confirm new password</label>
+                        <input type="password"
+                               class="form-control"
+                               name="confirmnewpassword"
+                               ng-model="user.ConfNewPassword"
+                               ng-minlength="6"
+                               ng-required="true"
+                               ng-pattern={{user.newpassword}} />
+                        <span class="error" ng-show="form.confirmnewpassword.$error.pattern">
+                            Passwords aren't equals!
+                        </span>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text"
+                               class="form-control"
+                               name="name"
+                               ng-model="user.name"
+                               ng-minlength="3"
+                               ng-maxlength="150"
+                               ng-required="true" />
+                        <span class="error" ng-show="form.name.$error.required">
+                            Required!
+                        </span>
+                        <span class="error" ng-show="form.name.$error.minlength">
+                            Too short!
+                        </span>
+                        <span class="error" ng-show="form.name.$error.maxlength">
+                            Too long!
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text"
+                               class="form-control"
+                               name="lastName"
+                               ng-minlength="3"
+                               ng-maxlength="150"
+                               ng-model="user.lastName"
+                               ng-required="true" />
+                        <span class="error" ng-show="form.lastName.$error.required">
+                            Required!
+                        </span>
+                        <span class="error" ng-show="form.lastName.$error.minlength">
+                            Too short!
+                        </span>
+                        <span class="error" ng-show="form.lastName.$error.maxlength">
+                            Too long!
+                        </span>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Date of birth</label>
+                        <p class="input-group">
+                            <input type="text"
+                                   class="form-control"
+                                   name="dateofbirth"
+                                   datepicker-popup="dd.MM.yyyy"
+                                   ng-model="user.dateOfBirth"
+                                   max-date="maxdate"
+                                   is-open="opened"
+                                   datepicker-options="dateOptions"
+                                   ng-required="true"
+                                   close-text="Close" />
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                            </span>
+                        </p>
+                        <span class="error" ng-show="form.dateofbirth.$error.required">
+                            Required!
+                        </span>
+                        <span class="error" ng-show="form.dateofbirth.$error.pattern">
+                            Wrong date format!
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        @Html.ActionLink("Back to Home", "Index", "Home")
+
+                        <button type="btn btn-default pull-right" ng-click="edit()" class=" btn btn-default" ng-disabled="form.$invalid">Save</button>
+                    </div>
+                </form>
+
+            </div>
+            <div class="col-xs-6">
+                <img src={{user.avatarPath}} alt="">
+
+                <button type="button" class="btn btn-lg btn-danger" data-animation="am-fade-and-slide-top" data-template="editAvatar" bs-modal="modal">
+                    Custom Modal
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+

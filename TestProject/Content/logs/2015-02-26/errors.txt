@@ -1,0 +1,20 @@
+2015-02-26 15:24:54.5376|WARN|TestProject.Areas.Default.Controllers.UserEditController|Couldn't registrate
+2015-02-26 15:26:00.1604|WARN|TestProject.Areas.Default.Controllers.UserEditController|Couldn't registrate
+2015-02-26 15:26:14.7842|WARN|TestProject.Areas.Default.Controllers.UserEditController|Couldn't registrate
+2015-02-26 15:26:44.5009|WARN|TestProject.Areas.Default.Controllers.UserEditController|Couldn't registrate
+2015-02-26 15:26:57.6727|WARN|TestProject.Areas.Default.Controllers.UserEditController|Couldn't registrate
+2015-02-26 15:27:03.2250|WARN|TestProject.Areas.Default.Controllers.UserEditController|Couldn't registrate
+2015-02-26 15:27:05.1641|WARN|TestProject.Areas.Default.Controllers.UserEditController|Couldn't registrate
+2015-02-26 15:27:08.2143|WARN|TestProject.Areas.Default.Controllers.UserEditController|Couldn't registrate
+2015-02-26 15:27:52.7628|WARN|TestProject.Areas.Default.Controllers.UserEditController|Couldn't registrate
+2015-02-26 15:31:54.6887|WARN|TestProject.Areas.Default.Controllers.UserEditController|Couldn't registrate
+2015-02-26 15:33:18.3945|WARN|TestProject.Areas.Default.Controllers.UserEditController|Couldn't registrate
+2015-02-26 15:37:15.7740|WARN|TestProject.Areas.Default.Controllers.UserEditController|Couldn't registrate
+2015-02-26 15:38:46.5422|WARN|TestProject.Areas.Default.Controllers.UserEditController|Couldn't registrate
+2015-02-26 15:40:45.0450|WARN|TestProject.Areas.Default.Controllers.UserEditController|Couldn't registrate
+2015-02-26 15:43:33.5536|WARN|TestProject.Areas.Default.Controllers.UserEditController|Couldn't registrate
+2015-02-26 16:23:48.1658|ERROR|TestProject.Controllers.BaseApiController|Culture not found
+2015-02-26 18:38:44.8099|ERROR|TestProject.Controllers.BaseApiController|Culture not found
+2015-02-26 18:39:55.5539|ERROR|TestProject.Controllers.BaseApiController|Culture not found
+2015-02-26 18:40:09.6007|ERROR|TestProject.Controllers.BaseApiController|Culture not found
+2015-02-26 18:40:16.0261|ERROR|TestProject.Controllers.BaseApiController|Culture not found

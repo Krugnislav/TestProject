@@ -4,28 +4,32 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    @Styles.Render("~/Content/themes/base/css", "~/Content/css")
+    @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrapjs")
+    @Scripts.Render("~/bundles/angularjs")
+    @Scripts.Render("~/bundles/app")
+
+    
 </head>
 <body>
-    <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                <ul class="nav nav-pills pull-right">
-                    @Html.Action("UserLogin", "Home")
-                </ul>
-
-            </div>
+    <div ng-app="valid">
+        <div class="wrapper container">
+            <header>
+                <a href="~/Home">
+                    <img src="~/content/img/logo.png" alt="">
+                </a>
+                <form name="logo" action="#" method="get" class="form-inline form-logo pull-right">
+                    <div class="input-group">
+                        @Html.Action("UserLogin", "Home")
+                    </div>
+                </form>
+            </header>
+            @RenderBody()
         </div>
     </div>
 
-    @RenderBody()
-
-    @DateTime.Now.ToString("D")
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
 </html>
