@@ -10,7 +10,6 @@ namespace TestProject.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "TestProject.Models.UserDbContext";
         }
 
         protected override void Seed(TestProject.Models.UserDbContext context)

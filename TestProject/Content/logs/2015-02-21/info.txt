@@ -1,0 +1,12 @@
+2015-02-21 16:46:27.7838|INFO|TestProject.MvcApplication|Application Start
+2015-02-21 18:41:47.5206|INFO|TestProject.MvcApplication|Application Start
+2015-02-21 18:58:28.6628|INFO|TestProject.MvcApplication|Application Start
+2015-02-21 19:12:18.6404|INFO|TestProject.MvcApplication|Application Start
+2015-02-21 19:25:18.6632|INFO|TestProject.Areas.Admin.Controllers.UsersController|Try to create user
+2015-02-21 19:25:31.0339|INFO|TestProject.Areas.Admin.Controllers.UsersController|User created
+2015-02-21 22:49:10.8194|INFO|TestProject.MvcApplication|Application Start
+2015-02-21 22:53:49.0130|INFO|TestProject.Areas.Admin.Controllers.UsersController|Try to create user
+2015-02-21 22:54:30.5294|INFO|TestProject.Areas.Admin.Controllers.UsersController|User created
+2015-02-21 23:03:30.5837|INFO|TestProject.MvcApplication|Application Start
+2015-02-21 23:09:29.4169|INFO|TestProject.Areas.Admin.Controllers.UsersController|Try to create user
+2015-02-21 23:09:37.5923|INFO|TestProject.Areas.Admin.Controllers.UsersController|User created

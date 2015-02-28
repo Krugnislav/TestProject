@@ -26,13 +26,18 @@ namespace TestProject.Areas.Admin.Controllers
             return PartialView(CurrentUser);
         }
 
+        public ActionResult EditRow()
+        {
+            return PartialView();
+        }
+
         // GET: Users
         public ActionResult Index()
         {
             var user = CurrentUser;
             if (user != null)
                 if (user.Roles.FirstOrDefault(p => p.ID == 1) != null)
-                return View();
+                    return View();
             return RedirectToAction("Index", "LoginAdmin");
         }
 
@@ -98,7 +103,7 @@ namespace TestProject.Areas.Admin.Controllers
             }
             return View(user);
         }
-
+    
         // POST: Users/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
