@@ -171,13 +171,10 @@
     <Compile Include="Global\Config\MailSetting.cs" />
     <Compile Include="Global\Config\MailTemplates.cs" />
     <Compile Include="Global\Config\MimeTypes.cs" />
-<<<<<<< HEAD
-=======
     <Compile Include="Migrations\201502240925102_DB-Migration.cs" />
     <Compile Include="Migrations\201502240925102_DB-Migration.Designer.cs">
       <DependentUpon>201502240925102_DB-Migration.cs</DependentUpon>
     </Compile>
->>>>>>> ad2e1751ad93b366c51d1489adb0cfff3ffc4192
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Filter.cs" />
     <Compile Include="Models\ViewModels\LoginView.cs" />
@@ -276,9 +273,6 @@
     <Content Include="Areas\Admin\Views\Users\UserLogin.cshtml" />
     <Content Include="Content\ng-table.less" />
     <Content Include="Areas\Default\Views\User\Activate.cshtml" />
-<<<<<<< HEAD
-    <None Include="Areas\Admin\Views\Users\EditRow.cshtml" />
-=======
     <Content Include="Areas\Default\Views\User\Create.cshtml" />
     <Content Include="Areas\Default\Views\Home\About.cshtml" />
     <Content Include="Areas\Default\Views\User\GoodCreate.cshtml" />
@@ -286,7 +280,7 @@
     <Content Include="Areas\Default\Views\User\ShortMenu.cshtml" />
     <Content Include="Areas\Default\Views\User\PrivateOffice.cshtml" />
     <Content Include="Areas\Default\Views\User\EditAvatar.cshtml" />
->>>>>>> ad2e1751ad93b366c51d1489adb0cfff3ffc4192
+    <Content Include="Areas\Default\Views\User\ChangePassword.cshtml" />
     <None Include="NLog.xsd" />
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="Scripts\angular-route.min.js.map" />
@@ -1106,14 +1100,11 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
-<<<<<<< HEAD
-=======
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201502240925102_DB-Migration.resx">
       <DependentUpon>201502240925102_DB-Migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
->>>>>>> ad2e1751ad93b366c51d1489adb0cfff3ffc4192
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

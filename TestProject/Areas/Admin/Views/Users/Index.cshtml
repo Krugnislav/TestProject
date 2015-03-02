@@ -13,9 +13,10 @@
     <div class="bs-example">
         <div class="container-fluid" ng-app="main">
             <div ng-controller="DemoCtrl">
-                <button class="btn btn-info" ng-click="create('sm')">
+                <button type="button" class="btn btn-link" ng-click="create()">
                     <span class=" glyphicon glyphicon-user" aria-hidden="true">Create new</span>
                 </button>
+
                 <table ng-table="tableParams" show-filter="true" class="table">
                     <tr ng-repeat="user in $data">
                         <td width="5%" data-title="'ID'" sortable="'ID'" filter="{ 'ID': 'clear' }">
@@ -82,7 +83,9 @@
                             </div>
                         </td>
                         <td width = "5%" data-title="''">
-                            <a href="" class="btn btn-default btn-xs" ng-click="open('',user)">Edit</a>
+                            <button type="button" class="btn btn-link" ng-click="open(user)">
+                                Edit
+                            </button>
                         </td>
                     </tr>
                 </table>

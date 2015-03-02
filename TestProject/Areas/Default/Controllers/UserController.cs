@@ -6,11 +6,13 @@ using System.Data.Entity;
 using System.Data.Entity.Core.Objects;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Web;
 using System.Web.Mvc;
 using TestProject.Controllers;
 using TestProject.Models;
+using TestProject.Models.ViewModels;
 using TestProject.Tools.Mail;
 
 namespace TestProject.Areas.Default.Controllers
@@ -77,7 +79,7 @@ namespace TestProject.Areas.Default.Controllers
             var userAuth = CurrentUser;
             if (userAuth == null)
                 return RedirectToAction("Index", "Home");
-            if (userAuth.AvatarPath == null) userAuth.AvatarPath = "/Content/file/default-avatar.png";
+            if (userAuth.AvatarPath == null) userAuth.AvatarPath = "~/Content/file/default-avatar.png";
             return View(SerializeObject(userAuth));
         }
 
@@ -105,6 +107,41 @@ namespace TestProject.Areas.Default.Controllers
             return PartialView();
         }
 
+        public ActionResult ChangePassword()
+        {
+            var userAuth = CurrentUser;
+            if (userAuth != null)
+                return RedirectToAction("Index", "Home");
+            return View(new LoginView());
+        }
+
+        [HttpPost]
+        public ActionResult ChangePassword(LoginView loginView)
+        {
+            User user = db.Users.FirstOrDefault(p => p.Email.Equals(loginView.Email));
+            if (user != null)
+                NotifyMail.SendNotify("Change", user.Email,
+                        subject => string.Format(subject, HostName),
+                        body => string.Format(body, HttpUtility.UrlEncode(user.ActivatedLink), HostName));
+
+            return RedirectToAction("Index", "Home");
+        }
+
+        public ActionResult ChangePass(string id)
+        {
+            var userAuth = CurrentUser;
+            if (userAuth == null)
+                if (id != null)
+                {
+                    var user = db.Activated(id);
+                    if (user != null)
+                    {
+                        // CurrentUser = user;
+                        return View(user);
+                    }
+                }
+            return RedirectToAction("Index", "Home");
+        }
 
     }
 }

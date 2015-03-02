@@ -1,8 +1,23 @@
-﻿var app = angular.module('main', ['ngRoute', 'daterangepicker', 'ngTable', 'ui.bootstrap']).
-controller('DemoCtrl', function ($scope, $http, $filter, $location, $modal, ngTableParams) {
+﻿var app = angular.module('main', ['ngRoute', 'daterangepicker', 'ngTable', 'mgcrea.ngStrap', 'ngSanitize',]);
+
+app.controller('DemoCtrl', function ($scope, $http, $filter, $location, $modal, ngTableParams) {
 
     $scope.roles = [];
     $scope.role = '';
+    $scope.urlEditModal = $location.protocol() + '://' + $location.host() + ':' + $location.port() + '/Admin/Users/Edit';
+    $scope.urlCreateModal = $location.protocol() + '://' + $location.host() + ':' + $location.port() + '/Admin/Users/Create';
+
+    var editModal = $modal({ scope: $scope, template: $scope.urlEditModal, show: false });
+
+    $scope.showEditModal = function () {
+        editModal.$promise.then(editModal.show);
+    };
+
+    var createModal = $modal({ scope: $scope, template: $scope.urlCreateModal, show: false });
+
+    $scope.showCreateModal = function () {
+        createModal.$promise.then(createModal.show);
+    };
 
     $scope.RoleFilter = [];
 
@@ -70,66 +85,37 @@ controller('DemoCtrl', function ($scope, $http, $filter, $location, $modal, ngTa
         $scope.tableParams.filter().Role = { name: null};
     };
 
-    $scope.open = function (size, user) {
-        var url = $location.protocol() + '://' + $location.host() + ':' + $location.port() + '/Admin/Users/Edit';
-        var modalInstance = $modal.open({
-            templateUrl: url,
-            controller: 'ModalInstanceCtrl',
-            size: size,
-            resolve: {
-                item: function () {
-                    return angular.copy(user);
-                },
-                statuses: function () {
-                    return $scope.statuses;
-                },
-                roles: function () {
-                    angular.forEach($scope.RoleFilter, function (role) {
-                        role.isUser = false;
-                        angular.forEach(user.Roles, function (roleU) {
-                            if (role.ID == roleU.ID) role.isUser = true;
-                        });
-                    });
-                    return $scope.RoleFilter;
-                }
-            }
+    $scope.open = function (user) {
+        $scope.user = user;
+        angular.forEach($scope.RoleFilter, function (role) {
+            role.isUser = false;
+            angular.forEach(user.Roles, function (roleU) {
+                if (role.ID == roleU.ID) role.isUser = true;
+            });
         });
-
-        modalInstance.result.then(function (form) {
-            user.Name = form.Name;
-            user.LastName = form.LastName;
-            user.DateOfBirth = form.DateOfBirth;
-            user.Roles = form.Roles;
-            user.Status = form.Status;
-        }, function () {
-        });
+        editModal.$promise.then(editModal.show);
     };
 
     $scope.create = function (size) {
-        var url = $location.protocol() + '://' + $location.host() + ':' + $location.port() + '/Admin/Users/Create';
-        var modalInstance = $modal.open({
-            templateUrl: url,
-            controller: 'ModalCreateCtrl',
-            size: size,
-            resolve: {
-            }
-        });
-
-        modalInstance.result.then(function (form) {
-
-        }, function () {
-        });
+        createModal.$promise.then(createModal.show);
     };
 
 });
 
-app.controller('ModalInstanceCtrl', function ($scope, $modalInstance, $location, $http, item, statuses, roles) {
+app.config(function ($datepickerProvider) {
+    angular.extend($datepickerProvider.defaults, {
+        dateFormat: 'dd.MM.yyyy',
+        startWeek: 1
+    });
+})
 
-    $scope.userEdit = item;
 
-    $scope.statuses = statuses;
+app.controller('ModalEditCtrl', function ($scope, $location, $http) {
 
-    $scope.roles = roles;
+    $scope.userEdit = angular.copy($scope.user);
+
+
+    $scope.roles = $scope.RoleFilter;
 
     $scope.change = function (role) {
         if (role.isUser) {
@@ -142,12 +128,18 @@ app.controller('ModalInstanceCtrl', function ($scope, $modalInstance, $location,
             $scope.userEdit.Roles.splice($scope.userEdit.Roles.indexOf(role), 1);
         }
     };
+    $scope.maxdate = new Date();
 
     $scope.ok = function () {
         var url = $location.protocol() + '://' + $location.host() + ':' + $location.port() + '/Admin/api/Table/Users';
         $http.post(url, $scope.userEdit) //наш контроллер с методом для получания списка
         .success(function () {
-            $modalInstance.close($scope.userEdit);
+            $scope.user.Name = $scope.userEdit.Name;
+            $scope.user.LastName = $scope.userEdit.LastName;
+            $scope.user.DateOfBirth = $scope.userEdit.DateOfBirth;
+            $scope.user.Roles = $scope.userEdit.Roles;
+            $scope.user.Status = $scope.userEdit.Status;
+            $scope.$hide();
         }).error(function (error) {
             $scope.validationErrors = [];
             if (error && angular.isObject(error.ModelState)) {
@@ -160,59 +152,26 @@ app.controller('ModalInstanceCtrl', function ($scope, $modalInstance, $location,
         });
     };
 
-    $scope.cancel = function () {
-        $modalInstance.dismiss('cancel');
-    };
-
-    $scope.disabled = function (date, mode) {
-        return (mode === 'day' && (date.getDay() === 0 || date.getDay() === 6));
-    };
-
-    $scope.open = function ($event) {
-        $event.preventDefault();
-        $event.stopPropagation();
-
-        $scope.opened = true;
-    };
-
-
 });
 
-app.controller('ModalCreateCtrl', function ($scope, $modalInstance, $location, $http) {
+app.controller('ModalCreateCtrl', function ($scope, $location, $http) {
 
 
-    $scope.cancel = function () {
-        $modalInstance.dismiss('cancel');
-    };
     $scope.form = {};
 
     $scope.create = function () {
         var url = $location.protocol() + '://' + $location.host() + ':' + $location.port() + '/Admin/Users/Create';
         $http.post(url, $scope.form).success(function (data, status, headers, config) {
             if (data.res.length == 2) {
+                $scope.$hide();
             } else {
             }
         }).error(function (err) {
             alert(err);
         });
-        $modalInstance.close();
     };
 
-    $scope.disabled = function (date, mode) {
-        return (mode === 'day' && (date.getDay() === 0 || date.getDay() === 6));
-    };
-    $scope.maxdate = ['01.02.2001'];
-    $scope.open = function ($event) {
-        $scope.maxdate = new Date();
-        $event.preventDefault();
-        $event.stopPropagation();
-
-        $scope.opened = true;
-    };
-    $scope.dateOptions = {
-        formatYear: 'yy',
-        startingDay: 1
-    };
+    $scope.maxdate = new Date();
 
 
 });

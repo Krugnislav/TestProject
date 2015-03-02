@@ -5,6 +5,7 @@ using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Security.Principal;
 using System.Threading;
 using System.Web;
 using System.Web.Http;
@@ -31,7 +32,9 @@ namespace TestProject.Controllers
         {
             get
             {
-                return ((IUserProvider)Auth.CurrentUser.Identity).User;
+      
+                User user = ((IUserProvider)Auth.CurrentUser.Identity).User;
+                return user;
             }
         }
 

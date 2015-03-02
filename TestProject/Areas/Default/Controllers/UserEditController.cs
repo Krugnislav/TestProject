@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -52,6 +54,56 @@ namespace TestProject.Areas.Default.Controllers
                 return Request.CreateResponse(HttpStatusCode.OK);
             }
             return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+        }
+
+        [System.Web.Http.ActionName("EditPassword")]
+        public HttpResponseMessage PostEditPassword(dynamic pass)
+        {
+            int id = pass["id"];
+            string password = pass["password"];
+            string newpassword = pass["newpassword"];
+            User user = db.Users.Find(id);
+            if ((user == null) || (user.Password != password))
+                return Request.CreateResponse(HttpStatusCode.BadRequest);
+            user.Password = newpassword;
+            if (ModelState.IsValid)
+            {
+                db.Entry(user).State = EntityState.Modified;
+                db.SaveChanges();
+
+                return Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+        }
+        
+        [System.Web.Http.ActionName("EditAvatar")]
+        public HttpResponseMessage PostEditAvatar(dynamic data)
+        {
+            int id = data["id"];
+            User user = db.Users.Find(id);
+            if (user == null)
+                return Request.CreateResponse(HttpStatusCode.BadRequest);
+            string AvatarPath = "~/Content/file/" + user.ID + "-Avatar.png";
+            user.AvatarPath = AvatarPath;
+            db.Entry(user).State = EntityState.Modified;
+            db.SaveChanges();
+            string Pic_Path = HttpContext.Current.Server.MapPath(AvatarPath);
+            string imageData = data["imageData"];
+
+            if (File.Exists(Pic_Path)) File.Delete(Pic_Path);
+            using (FileStream fs = new FileStream(Pic_Path, FileMode.Create))
+            {
+                using (BinaryWriter bw = new BinaryWriter(fs))
+                {
+                    byte[] dataImg = Convert.FromBase64String(imageData);
+                    bw.Write(dataImg);
+                    bw.Close();
+                }
+            }
+
+    
+            return Request.CreateResponse(HttpStatusCode.OK);
+
         }
 
         [System.Web.Http.ActionName("CheckAnEmail")]

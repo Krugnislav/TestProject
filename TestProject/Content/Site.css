@@ -116,5 +116,12 @@ textarea {
       overflow: hidden;
       width:500px;
       height:350px;
+
     }
 
+.avatar {
+      background: #E4E4E4;
+      overflow: hidden;
+      width:200px;
+      height:200px;
+    }

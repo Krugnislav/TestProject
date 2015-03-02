@@ -1,0 +1,9 @@
+diff a/TestProject/TestProject.csproj b/TestProject/TestProject.csproj	(rejected hunks)
+@@ -171,6 +171,7 @@
+     <Compile Include="Global\Config\MailSetting.cs" />
+     <Compile Include="Global\Config\MailTemplates.cs" />
+     <Compile Include="Global\Config\MimeTypes.cs" />
++<<<<<<< HEAD
+ =======
+     <Compile Include="Migrations\201502240925102_DB-Migration.cs" />
+     <Compile Include="Migrations\201502240925102_DB-Migration.Designer.cs">
