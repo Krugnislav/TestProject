@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using TestProject.Controllers;
@@ -18,6 +19,53 @@ namespace TestProject.Areas.Admin.Controllers
         private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
 
         private UserDbContext db = new UserDbContext();
+
+        private string RandomString(int size, Random random)
+        {
+            StringBuilder builder = new StringBuilder();
+            char ch;
+            for (int i = 0; i < size; i++)
+            {
+                ch = Convert.ToChar(Convert.ToInt32(Math.Floor(26 * random.NextDouble() + 65)));
+                builder.Append(ch);
+            }
+
+            return builder.ToString();
+        }
+
+        private void FillTable() {
+            Random rand = new Random();
+            DateTime start = new DateTime(1945, 1, 1);
+            int range = (DateTime.Today - start).Days;
+            for (int i = 0; i < 100000; i++)
+            {
+                int status = rand.Next(2);
+                User user = new User();
+                string EmailP1 = RandomString(10, rand);
+                string EmailP2 = RandomString(4, rand);
+                string Email = EmailP1 + "@" + EmailP2 + ".com";
+                while (!CheckAnEmail(Email)) 
+                {
+                    EmailP1 = RandomString(10, rand);
+                    EmailP2 = RandomString(4, rand);
+                    Email = EmailP1 + "@" + EmailP2 + ".com";
+                } 
+                user.Email = Email;
+                user.Name = RandomString(10, rand);
+                user.LastName = RandomString(10, rand);
+                user.Password = RandomString(10, rand);
+                user.AddedDate = System.DateTime.Now;
+                user.ActivatedLink = user.GetActivateUrl();
+                user.ActivatedDate = System.DateTime.Now;
+                if (status == 1) user.Status = "Активирован";
+                else user.Status = "Дезактивирован";
+                user.DateOfBirth = start.AddDays(rand.Next(range));
+                db.Users.Add(user);
+                db.SaveChanges();
+            }
+        }
+
+
 
         public ActionResult UserLogin()
         {
@@ -34,6 +82,8 @@ namespace TestProject.Areas.Admin.Controllers
         // GET: Users
         public ActionResult Index()
         {
+            //FillTable();
+
             var user = CurrentUser;
             if (user != null)
                 if (user.Roles.FirstOrDefault(p => p.ID == 1) != null)

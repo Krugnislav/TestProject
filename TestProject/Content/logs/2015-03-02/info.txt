@@ -18,3 +18,19 @@
 2015-03-02 12:05:07.0129|INFO|TestProject.MvcApplication|Application Start
 2015-03-02 12:08:37.9561|INFO|TestProject.MvcApplication|Application Start
 2015-03-02 12:11:57.7747|INFO|TestProject.MvcApplication|Application Start
+2015-03-02 18:53:40.7446|INFO|TestProject.MvcApplication|Application Start
+2015-03-02 19:51:38.4887|INFO|TestProject.MvcApplication|Application Start
+2015-03-02 20:05:49.0024|INFO|TestProject.MvcApplication|Application Start
+2015-03-02 20:10:45.9846|INFO|TestProject.MvcApplication|Application Start
+2015-03-02 20:11:26.3042|INFO|TestProject.Areas.Default.Controllers.UserEditController|User try to registr
+2015-03-02 20:11:27.8094|INFO|TestProject.Areas.Default.Controllers.UserEditController|User registrated
+2015-03-02 20:38:11.0439|INFO|TestProject.MvcApplication|Application Start
+2015-03-02 20:38:30.7156|INFO|TestProject.MvcApplication|Application Start
+2015-03-02 20:39:20.6466|INFO|TestProject.MvcApplication|Application Start
+2015-03-02 20:43:17.0353|INFO|TestProject.MvcApplication|Application Start
+2015-03-02 20:51:00.6698|INFO|TestProject.MvcApplication|Application Start
+2015-03-02 20:51:21.4085|INFO|TestProject.MvcApplication|Application Start
+2015-03-02 21:13:43.3458|INFO|TestProject.MvcApplication|Application Start
+2015-03-02 21:16:36.9901|INFO|TestProject.MvcApplication|Application Start
+2015-03-02 21:18:47.9757|INFO|TestProject.Areas.Default.Controllers.UserEditController|User try to registr
+2015-03-02 21:18:49.4491|INFO|TestProject.Areas.Default.Controllers.UserEditController|User registrated

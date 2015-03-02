@@ -136,12 +136,25 @@ namespace TestProject.Areas.Default.Controllers
                     var user = db.Activated(id);
                     if (user != null)
                     {
-                        // CurrentUser = user;
-                        return View(user);
+                        PassChanger changepass = new PassChanger();
+                        changepass.ID = user.ID;
+                        return View(changepass);
                     }
                 }
             return RedirectToAction("Index", "Home");
         }
 
+        [HttpPost]
+        public ActionResult ChangePass(PassChanger changepass)
+        {
+            User user = db.Users.Find(changepass.ID);
+            if (user != null)
+            {
+                user.Password = changepass.NewPassword;
+                db.Entry(user).State = EntityState.Modified;
+                db.SaveChanges();
+            }
+            return RedirectToAction("Index", "Home");
+        }
     }
 }
